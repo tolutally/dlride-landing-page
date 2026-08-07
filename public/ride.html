@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ride — Get a reliable ride in minutes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body class="font-sans antialiased bg-white">
+    <!-- HERO -->
+    <section class="relative min-h-screen overflow-hidden">
+      <!-- Video underlay -->
+      <div class="absolute inset-0">
+        <video
+          autoplay=""
+          muted=""
+          loop=""
+          playsinline=""
+          class="w-full h-full object-cover"
+        >
+          <source
+            src="/highway%20video%20hero.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <!-- Blue overlay -->
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div
+          class="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/85"
+        ></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
+        <!-- Floating header -->
+        <header class="fixed left-1/2 top-3 z-50 w-full max-w-5xl -translate-x-1/2 px-3 text-white">
+          <div class="relative flex h-14 items-center justify-between rounded-full bg-slate-900/95 px-3 ring-1 ring-white/10 shadow-2xl shadow-black/20 backdrop-blur-xl">
+            <a href="#" class="flex items-center" aria-label="DLride home">
+              <img src="/dlride-logo-white.png" alt="DLride" class="h-10 w-28 object-contain" />
+            </a>
+
+            <nav class="hidden items-center gap-7 text-sm text-slate-300 md:flex" aria-label="Main navigation">
+              <a href="#available-cars" class="transition hover:text-white">Available Cars</a>
+              <a href="#how-it-works" class="transition hover:text-white">How It Works</a>
+              <a href="#why-dlride" class="transition hover:text-white">Why DLride</a>
+              <a href="#faq" class="transition hover:text-white">FAQ</a>
+            </nav>
+
+            <a
+              href="/booking"
+              class="liquid-glass-button relative hidden h-10 items-center justify-center overflow-hidden rounded-full border border-white/15 bg-gradient-to-r from-white/10 to-white/5 px-6 text-sm font-medium text-white/90 shadow-lg backdrop-blur-xl transition hover:from-white/15 hover:to-white/10 md:inline-flex"
+            >
+              <span class="relative z-10">Get Started</span>
+            </a>
+
+            <button id="mobileMenuButton" type="button" class="inline-flex items-center justify-center rounded-full p-2 transition hover:bg-white/10 md:hidden" aria-label="Toggle navigation" aria-expanded="false">
+              <i data-lucide="menu" class="h-5 w-5"></i>
+            </button>
+
+            <nav id="mobileMenu" class="absolute left-3 right-3 top-16 hidden rounded-2xl border border-white/10 bg-slate-900 p-3 shadow-2xl md:hidden" aria-label="Mobile navigation">
+              <a href="#available-cars" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">Available Cars</a>
+              <a href="#how-it-works" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">How It Works</a>
+              <a href="#why-dlride" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">Why DLride</a>
+              <a href="#faq" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">FAQ</a>
+              <a href="/booking" class="mt-2 block rounded-full bg-[#2F5FAF] px-4 py-3 text-center text-sm font-semibold text-white">Get Started</a>
+            </nav>
+          </div>
+        </header>
+        <div class="h-20" aria-hidden="true"></div>
+
+        <!-- Hero grid -->
+        <div
+          class="flex flex-col items-center text-center pt-14 lg:pt-20 pb-14"
+        >
+          <p
+            class="inline-flex items-center gap-2 text-sm font-medium text-[#7CA3E6]"
+          >
+            <i data-lucide="car-front" class="w-4 h-4"></i>
+            Weekly car rentals in Atlanta
+          </p>
+          <h1
+            class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-white leading-[1.1] max-w-3xl"
+          >
+            A reliable car for work, life, and everything in between.
+          </h1>
+          <p class="mt-6 text-base text-white/80 max-w-xl leading-relaxed">
+            Flexible weekly rentals without the hassle of a long-term commitment.
+          </p>
+        </div>
+
+        <!-- QUICK FORM BAR -->
+        <div id="hero-form" class="scroll-mt-24 pb-16 lg:pb-20">
+          <div
+            class="rounded-2xl lg:rounded-full bg-white shadow-2xl shadow-black/40 px-6 py-5 sm:px-8"
+          >
+            <div
+              class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-5 items-center"
+            >
+              <div>
+                <label for="heroUseSelect" class="sr-only">
+                  What do you need a car for?
+                </label>
+                <select
+                  id="heroUseSelect"
+                  class="w-full bg-transparent py-2 text-sm font-medium text-slate-700 focus:outline-none cursor-pointer"
+                >
+                  <option value="" selected="">
+                    What do you need a car for?
+                  </option>
+                  <option>Gig work</option>
+                  <option>Travel nursing</option>
+                  <option>Private use</option>
+                  <option>Road trips</option>
+                </select>
+              </div>
+              <div class="flex md:justify-end">
+                <button
+                  id="heroGetStarted"
+                  type="button"
+                  disabled
+                  aria-disabled="true"
+                  class="inline-flex w-full md:w-auto items-center justify-center gap-2 rounded-full bg-[#2F5FAF] px-8 py-3 text-sm font-medium text-white transition whitespace-nowrap hover:bg-[#264E91] disabled:cursor-not-allowed disabled:bg-slate-300 disabled:text-slate-500 disabled:hover:bg-slate-300"
+                >
+                  Get Started
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-6 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          >
+            <div
+              class="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-3 sm:p-6 flex sm:block items-center gap-3"
+            >
+              <span
+                class="inline-flex shrink-0 items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/15"
+              >
+                <i data-lucide="badge-check" class="w-5 h-5 text-white"></i>
+              </span>
+              <h3 class="mt-0 sm:mt-4 text-sm sm:text-base font-semibold text-white leading-tight">
+                No Credit Check
+              </h3>
+              <p class="hidden sm:block mt-2 text-sm text-white/75 leading-relaxed">
+                Your credit history won't hold you back from getting on the
+                road.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-3 sm:p-6 flex sm:block items-center gap-3"
+            >
+              <span
+                class="inline-flex shrink-0 items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/15"
+              >
+                <i data-lucide="wrench" class="w-5 h-5 text-white"></i>
+              </span>
+              <h3 class="mt-0 sm:mt-4 text-sm sm:text-base font-semibold text-white leading-tight">
+                Maintenance Covered
+              </h3>
+              <p class="hidden sm:block mt-2 text-sm text-white/75 leading-relaxed">
+                All routine maintenance is included so you focus on driving, not
+                repairs.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-3 sm:p-6 flex sm:block items-center gap-3"
+            >
+              <span
+                class="inline-flex shrink-0 items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/15"
+              >
+                <i data-lucide="life-buoy" class="w-5 h-5 text-white"></i>
+              </span>
+              <h3 class="mt-0 sm:mt-4 text-sm sm:text-base font-semibold text-white leading-tight">
+                24/7 Roadside Assistance
+              </h3>
+              <p class="hidden sm:block mt-2 text-sm text-white/75 leading-relaxed">
+                We've got your back anytime, anywhere across Metro Atlanta.
+              </p>
+            </div>
+            <div
+              class="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-3 sm:p-6 flex sm:block items-center gap-3"
+            >
+              <span
+                class="inline-flex shrink-0 items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/15"
+              >
+                <i data-lucide="car-front" class="w-5 h-5 text-white"></i>
+              </span>
+              <h3 class="mt-0 sm:mt-4 text-sm sm:text-base font-semibold text-white leading-tight">
+                Well-Maintained Fleet
+              </h3>
+              <p class="hidden sm:block mt-2 text-sm text-white/75 leading-relaxed">
+                Clean, reliable vehicles ready for rideshare and delivery work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORM STRIP -->
+    <section class="py-7 bg-white sm:py-9 lg:py-10 border-b border-slate-100">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="grid items-center text-center lg:grid-cols-[minmax(0,1fr)_minmax(0,3fr)] lg:gap-10 lg:text-left">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-[#2F5FAF]">
+              Built for Atlanta
+            </p>
+            <h2 class="mt-2 text-xl font-bold tracking-tight text-[#122A52] sm:text-2xl">
+              Built for the apps Atlanta drives.
+            </h2>
+          </div>
+
+          <div class="mt-5 lg:mt-0">
+            <div
+              class="grid items-center grid-cols-6 gap-x-2 gap-y-3 sm:grid-cols-5 sm:gap-x-4 lg:gap-x-7"
+              aria-label="Supported driving platforms"
+            >
+              <img src="/uber-eats-logo.png" alt="Uber Eats" class="col-span-2 mx-auto h-12 w-20 rounded-lg object-contain sm:col-span-1 sm:h-14" />
+              <img src="/doordash-logo-clean.png" alt="DoorDash" class="col-span-2 mx-auto h-12 w-20 object-contain sm:col-span-1 sm:h-14" />
+              <img src="/amazon-flex-2.jpeg" alt="Amazon Flex" class="col-span-2 mx-auto h-[6.25rem] w-[10.4rem] object-contain sm:col-span-1 sm:h-[7.3rem]" />
+              <img src="/instacart-logo-clean.png" alt="Instacart" class="col-span-2 col-start-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:col-start-auto sm:h-14 sm:w-28" />
+              <img src="/grubhub-logo-clean.png" alt="Grubhub" class="col-span-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:h-14 sm:w-28" />
+            </div>
+            <p class="mt-3 text-center text-[11px] font-semibold text-[#122A52]/60 sm:text-xs">
+              Hospital shifts • Everyday driving • Road trips • Temporary transportation
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVAILABLE VEHICLES -->
+    <section id="available-cars" class="scroll-mt-20 bg-slate-50 px-4 py-16 sm:px-6 sm:py-20 lg:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-[#2F5FAF]">
+            Available now
+          </p>
+          <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-800 sm:text-5xl">
+            Pick a car that fits your week.
+          </h2>
+          <p class="mx-auto mt-5 max-w-xl text-sm leading-relaxed text-slate-500 sm:text-base">
+            Whether you’re earning on the road, commuting to shifts, handling
+            everyday life, or getting out of town, find a reliable car that fits
+            how you plan to use it.
+          </p>
+        </div>
+
+        <div
+          id="vehicleCarousel"
+          class="vehicle-carousel -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-4"
+          aria-label="Available vehicles"
+        >
+          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
+            <img
+              class="h-56 w-full object-cover sm:h-64"
+              src="/ford-fusion.avif"
+              alt="Ford Fusion available for rent"
+            />
+            <div class="flex flex-1 flex-col p-6 text-white">
+              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
+              <h3 class="mt-4 text-2xl font-semibold">Ford Fusion</h3>
+              <p class="mt-2 text-base font-semibold text-blue-200">Best for gig workers</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">Fuel-efficient and comfortable for long hours on the road.</p>
+              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Hybrid&nbsp; • &nbsp;Automatic&nbsp; • &nbsp;42 MPG</p>
+            </div>
+          </article>
+
+          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
+            <img
+              class="h-56 w-full object-cover sm:h-64"
+              src="/kia-optima-2.jpg"
+              alt="Kia Optima available for rent"
+            />
+            <div class="flex flex-1 flex-col p-6 text-white">
+              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
+              <h3 class="mt-4 text-2xl font-semibold">Kia Optima</h3>
+              <p class="mt-2 text-base font-semibold text-blue-200">Best for private use</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">A practical, dependable car for everyday driving around Atlanta.</p>
+              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Automatic&nbsp; • &nbsp;38 MPG</p>
+            </div>
+          </article>
+
+          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
+            <img
+              class="h-56 w-full object-cover sm:h-64"
+              src="/hyundai-sonata.jpg"
+              alt="Hyundai Sonata available for rent"
+            />
+            <div class="flex flex-1 flex-col p-6 text-white">
+              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
+              <h3 class="mt-4 text-2xl font-semibold">Hyundai Sonata</h3>
+              <p class="mt-2 text-base font-semibold text-blue-200">Best for travel nurses</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">Reliable and comfortable for repeated weekly commutes and shift-based schedules.</p>
+              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Automatic&nbsp; • &nbsp;40 MPG</p>
+            </div>
+          </article>
+
+          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
+            <img
+              class="h-56 w-full object-cover sm:h-64"
+              src="/2016-nissan-altima.jpg"
+              alt="Nissan Altima available for rent"
+            />
+            <div class="flex flex-1 flex-col p-6 text-white">
+              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
+              <h3 class="mt-4 text-2xl font-semibold">Nissan Altima</h3>
+              <p class="mt-2 text-base font-semibold text-blue-200">Best for leisure rides &amp; road trips</p>
+              <p class="mt-2 text-sm leading-relaxed text-slate-300">Smooth and roomy for weekend outings and longer drives.</p>
+              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Automatic&nbsp; • &nbsp;39 MPG</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY ATLANTA DRIVERS CHOOSE DLRIDE -->
+    <section id="why-dlride" class="scroll-mt-20 relative overflow-hidden bg-white px-4 py-16 text-slate-900 sm:px-6 sm:py-20">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-50/70 via-white to-white" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <div class="mx-auto max-w-3xl text-center">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#2F5FAF]">
+              Why Atlanta drivers choose DLride
+            </p>
+            <h2 class="mt-4 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+              The car is covered. So you can focus on the week ahead.
+            </h2>
+          </div>
+          <p class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
+            Whether you’re driving for work, commuting to shifts, handling everyday life, or getting out of town, DLride removes some of the usual friction that comes with renting a car.
+          </p>
+        </div>
+
+        <div class="relative z-10 mt-12">
+          <div class="grid grid-cols-1 gap-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4 lg:p-4">
+            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+                <i data-lucide="badge-check" class="h-5 w-5" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-semibold tracking-tight md:text-lg">No credit check</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Your credit history shouldn’t decide whether you can get where you need to go.</p>
+              </div>
+            </article>
+
+            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+                <i data-lucide="infinity" class="h-5 w-5" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-semibold tracking-tight md:text-lg">Unlimited miles</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Drive for work, commute across Atlanta, run errands, or take a road trip without counting every mile.</p>
+              </div>
+            </article>
+
+            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+                <i data-lucide="wrench" class="h-5 w-5" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-semibold tracking-tight md:text-lg">Maintenance covered</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Routine maintenance is handled, so you can spend less time worrying about upkeep and more time using the car.</p>
+              </div>
+            </article>
+
+            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+                <i data-lucide="life-buoy" class="h-5 w-5" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-semibold tracking-tight md:text-lg">24/7 roadside support</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">If something goes wrong on the road, help is available whenever you need it.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how-it-works" class="scroll-mt-20 bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-2xl text-center">
+          <div class="mx-auto max-w-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#2F5FAF]">
+              How it works
+            </p>
+            <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              Simple from day one
+            </h2>
+          </div>
+
+          <div class="mt-5">
+            <p class="text-base font-medium text-slate-500 sm:text-lg">
+              From needing a car to getting on the road.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 gap-x-14 gap-y-10 px-5 text-center sm:mt-20 sm:px-0 sm:text-left lg:grid-cols-3">
+          <article class="sm:flex sm:items-start">
+            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-50 text-2xl font-bold text-[#2F5FAF] ring-2 ring-slate-900 sm:mx-0">
+              01
+            </div>
+            <div class="mt-5 sm:ml-6 sm:mt-0">
+              <h3 class="text-lg font-bold text-slate-900">Apply Online</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Quick and easy application, no credit check required.
+              </p>
+            </div>
+          </article>
+
+          <article class="sm:flex sm:items-start">
+            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-50 text-2xl font-bold text-[#2F5FAF] ring-2 ring-slate-900 sm:mx-0">
+              02
+            </div>
+            <div class="mt-5 sm:ml-6 sm:mt-0">
+              <h3 class="text-lg font-bold text-slate-900">Get Approved</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Fast approval process gets you behind the wheel quickly.
+              </p>
+            </div>
+          </article>
+
+          <article class="sm:flex sm:items-start">
+            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-50 text-2xl font-bold text-[#2F5FAF] ring-2 ring-slate-900 sm:mx-0">
+              03
+            </div>
+            <div class="mt-5 sm:ml-6 sm:mt-0">
+              <h3 class="text-lg font-bold text-slate-900">Pick up and drive</h3>
+              <p class="mt-3 text-sm font-medium leading-6 text-slate-500">
+                Make payment. Pick your car and get on the road.
+              </p>
+            </div>
+          </article>
+        </div>
+        <div class="mt-12 flex justify-center">
+          <a
+            href="/booking"
+            class="inline-flex items-center justify-center gap-3 rounded-full bg-[#2F5FAF] px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-[#264E91]"
+          >
+            Get Started
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFFERENT KIND OF RENTAL -->
+    <section class="bg-[#111c32] px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid items-end gap-8 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">
+              A different kind of car rental
+            </p>
+            <h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              Built for the weeks when you need a car — not a commitment.
+            </h2>
+          </div>
+          <div class="space-y-4 text-sm leading-7 text-slate-300 sm:text-base">
+            <p>Traditional rentals are designed around short trips. Leasing is designed around years.</p>
+            <p>DLride sits in the middle: reliable weekly cars for people who need flexibility now, whether that’s for work, an assignment, everyday life, or a trip out of town.</p>
+          </div>
+        </div>
+
+        <div
+          id="rentalDifferenceCarousel"
+          class="vehicle-carousel -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 sm:pb-0 lg:mt-16 lg:grid-cols-3"
+          aria-label="DLride rental benefits"
+        >
+          <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0">
+            <img src="/calendar-art-sky.png" alt="Calendar representing flexible weekly rentals" class="aspect-[16/9] w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold tracking-tight">Weekly, not long-term</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Keep a car for the time you actually need it without signing up for months or years.</p>
+            </div>
+          </article>
+
+          <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0">
+            <img src="/real-life-art-sky.png" alt="Car connecting work, errands, appointments, and travel" class="aspect-[16/9] w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold tracking-tight">Use it for real life</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Gig shifts, hospital commutes, errands, appointments, weekend drives — one car can fit the whole week.</p>
+            </div>
+          </article>
+
+          <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0">
+            <img src="/less-check-art-sky.png" alt="Car key and approved identification representing a simpler rental process" class="aspect-[16/9] w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold tracking-tight">Less standing in your way</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-400">No credit check, straightforward requirements, and a simpler path to getting on the road.</p>
+            </div>
+          </article>
+
+          <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0 lg:col-span-1">
+            <img src="/maintenance-art-sky.png" alt="Maintenance and roadside assistance coverage" class="aspect-[16/9] w-full object-cover" />
+            <div class="p-6">
+              <h3 class="text-xl font-semibold tracking-tight">The expensive stuff is covered</h3>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Routine maintenance and roadside support are included, so keeping the car running isn’t another problem to solve.</p>
+            </div>
+          </article>
+
+          <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:col-span-2 sm:min-w-0 lg:col-span-2">
+            <div class="grid h-full sm:grid-cols-[0.85fr_1.15fr]">
+              <img src="/mile-art-sky.png" alt="Unlimited mileage represented by an open road and speedometer" class="h-56 w-full object-cover sm:h-full sm:min-h-48" />
+              <div class="flex flex-col justify-center p-6 sm:p-8">
+                <h3 class="text-xl font-semibold tracking-tight">Drive without counting every mile</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-400">Unlimited mileage gives you room to work, commute, travel, and handle whatever the week brings.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="mx-auto mt-12 max-w-4xl border-t border-white/10 pt-8 text-center text-lg font-semibold leading-8 text-blue-100 sm:text-xl">
+          Different reason for renting. Same idea: get the car you need without taking on more than you need.
+        </p>
+      </div>
+    </section>
+
+    <!-- USE CASES -->
+    <section id="use-cases" class="scroll-mt-20 bg-white px-4 py-12 sm:px-6 sm:py-16 lg:py-20 xl:py-24">
+      <div class="mx-auto max-w-7xl">
+        <div class="mx-auto max-w-2xl text-center">
+          <h2 class="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
+            Built for every way you would ever need a car
+          </h2>
+        </div>
+
+        <div
+          id="useCaseCarousel"
+          class="vehicle-carousel -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-4 sm:mx-auto sm:mt-16 sm:grid sm:max-w-none sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4 lg:gap-5"
+          aria-label="Ways to use a DLride rental"
+        >
+          <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Gig workers</p>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">When your car stops, your income can stop too.</span></h3>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Get a reliable weekly rental for Uber, Lyft, DoorDash, Instacart and other gig work — with unlimited miles and maintenance covered.</p>
+            <div class="mt-auto pt-6"><img src="/gig-worker.webp" alt="Gig worker driving with a phone mounted in the car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+          </article>
+
+          <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Travel nurses</p>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">A new assignment shouldn’t mean scrambling for transportation.</span></h3>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Get a dependable car for hospital commutes, rotating shifts and temporary placements without taking on a long-term lease.</p>
+            <div class="mt-auto pt-6"><img src="/travel-nurse.jpg" alt="Travel nurse loading her bag into a car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+          </article>
+
+          <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Everyday drivers</p>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">Life doesn’t wait because your car is unavailable.</span></h3>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Use DLride for work, school runs, appointments, errands and everything else you still need to get done.</p>
+            <div class="mt-auto pt-6"><img src="/everyday-driver.webp" alt="Everyday driver getting comfortable in a car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+          </article>
+
+          <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Road trips &amp; leisure</p>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">Sometimes you just need a car for the plans you already made.</span></h3>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Take a comfortable weekly rental for weekend getaways, longer drives and time out of the city — without committing to a car you don’t need year-round.</p>
+            <div class="mt-auto pt-6"><img src="/road-trip-driver.avif" alt="Driver taking a car on a road trip" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL DRIVER STORIES -->
+    <section id="stories" class="scroll-mt-20 relative px-4 py-6 sm:px-6">
+      <div class="mx-auto max-w-7xl rounded-3xl border border-white/10 bg-[#122A52] p-5 sm:p-6">
+        <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-6">
+          <span class="text-3xl font-medium tracking-tight text-white sm:text-4xl">Testimonials</span>
+          <span aria-hidden="true" class="hidden h-10 w-px bg-white/10 sm:block"></span>
+          <span class="text-sm text-blue-200">stories from Atlanta renters</span>
+        </div>
+        <div class="mt-4 h-px bg-white/10"></div>
+
+        <div class="mt-6 grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
+          <div class="lg:col-span-6 lg:sticky lg:top-8">
+            <h2 class="text-4xl font-light leading-[1.05] tracking-tighter text-white sm:text-5xl">
+              Different weeks. Same need for a reliable car.
+            </h2>
+            <p class="mt-4 max-w-[55ch] text-sm leading-6 text-blue-200 sm:text-base">
+              From gig shifts and hospital rotations to everyday errands and weekend escapes, see how Atlanta renters use DLride to keep their week moving.
+            </p>
+
+            <div class="mt-5 grid grid-cols-3 gap-3">
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
+                <div class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">100+</div>
+                <div class="mt-1 text-xs text-blue-200">Happy Drivers</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
+                <div class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">99%</div>
+                <div class="mt-1 text-xs text-blue-200">Uptime Rate</div>
+              </div>
+              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
+                <div class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">24/7</div>
+                <div class="mt-1 text-xs text-blue-200">Roadside support</div>
+              </div>
+            </div>
+
+            <div class="mt-5 h-px bg-white/10"></div>
+            <a href="/booking" class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#2F5FAF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#264E91]">
+              Get Started
+              <i data-lucide="arrow-right" class="h-4 w-4"></i>
+            </a>
+          </div>
+
+          <div id="testimonialFeed" class="relative h-[475px] overflow-hidden lg:col-span-6">
+            <div class="testimonial-scroll-container flex flex-col gap-4">
+            <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+              <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus T." class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                <div>
+                  <h3 class="text-lg font-semibold tracking-tight text-white">Marcus T.</h3>
+                  <p class="mt-0.5 text-xs text-blue-200">Uber &amp; DoorDash Driver · Atlanta</p>
+                </div>
+              </div>
+              <div class="my-4 h-px bg-white/10"></div>
+              <div class="text-sm tracking-widest text-amber-400" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mt-3 text-sm leading-6 text-blue-100 sm:text-base">“I needed something dependable so I could keep working without putting more miles on my own car. Pickup was easy, and I was back on the road that week.”</p>
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-400">Gig work</span>
+                <span class="text-xs text-blue-300">Weekly rental</span>
+              </div>
+            </article>
+
+            <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+              <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Danielle R." class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                <div>
+                  <h3 class="text-lg font-semibold tracking-tight text-white">Danielle R.</h3>
+                  <p class="mt-0.5 text-xs text-blue-200">Travel Nurse · Atlanta</p>
+                </div>
+              </div>
+              <div class="my-4 h-px bg-white/10"></div>
+              <div class="text-sm tracking-widest text-amber-400" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mt-3 text-sm leading-6 text-blue-100 sm:text-base">“I was in Atlanta for an assignment and didn’t want to deal with buying a car or a long-term lease. DLride gave me exactly the flexibility I needed.”</p>
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-blue-400/10 px-3 py-1 text-xs text-blue-300">Travel nursing</span>
+                <span class="text-xs text-blue-300">Flexible term</span>
+              </div>
+            </article>
+
+            <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+              <div class="flex items-center gap-3">
+                <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Chris M." class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                <div>
+                  <h3 class="text-lg font-semibold tracking-tight text-white">Chris M.</h3>
+                  <p class="mt-0.5 text-xs text-blue-200">Atlanta Resident</p>
+                </div>
+              </div>
+              <div class="my-4 h-px bg-white/10"></div>
+              <div class="text-sm tracking-widest text-amber-400" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mt-3 text-sm leading-6 text-blue-100 sm:text-base">“My car was in the shop longer than expected, but life didn’t stop. I had something reliable for work, errands, and everything in between.”</p>
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-violet-400/10 px-3 py-1 text-xs text-violet-300">Everyday use</span>
+                <span class="text-xs text-blue-300">No long commitment</span>
+              </div>
+            </article>
+
+            <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
+              <div class="flex items-center gap-3">
+                <div class="grid h-11 w-11 place-items-center rounded-full bg-[#2F5FAF] text-xs font-bold text-white ring-2 ring-white/20">A&amp;J</div>
+                <div>
+                  <h3 class="text-lg font-semibold tracking-tight text-white">Alicia &amp; Jordan</h3>
+                  <p class="mt-0.5 text-xs text-blue-200">Atlanta</p>
+                </div>
+              </div>
+              <div class="my-4 h-px bg-white/10"></div>
+              <div class="text-sm tracking-widest text-amber-400" aria-label="5 out of 5 stars">★★★★★</div>
+              <p class="mt-3 text-sm leading-6 text-blue-100 sm:text-base">“We wanted a car for a week away without the usual rental hassle. It gave us the freedom to go where we wanted without worrying about mileage.”</p>
+              <div class="mt-4 flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-amber-400/10 px-3 py-1 text-xs text-amber-300">Road trip</span>
+                <span class="text-xs text-blue-300">Unlimited miles</span>
+              </div>
+            </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="scroll-mt-20 relative bg-white px-4 py-16 sm:px-6 lg:py-24">
+      <div class="mx-auto max-w-7xl px-2 lg:px-4">
+        <p class="inline-flex w-full items-center justify-center gap-2 text-xs font-medium text-[#2F5FAF]">
+          <i data-lucide="asterisk" class="h-4 w-4"></i>
+          FAQ
+        </p>
+        <h2 class="mx-auto mt-4 max-w-2xl text-center text-3xl font-semibold leading-snug tracking-tight text-slate-900 sm:text-4xl">
+          Before you get on the road, here’s what to know.
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-slate-500">
+          Weekly rentals in Atlanta for gig work, travel assignments, everyday driving, and road trips.
+        </p>
+        <div class="mx-auto mt-10 max-w-3xl divide-y divide-slate-200 border-t border-slate-200">
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Who can rent from DLride?"
+            >
+              <span class="text-base font-semibold text-slate-900">Who can rent from DLride?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              DLride is for anyone who needs a reliable car without a long-term commitment — including gig workers, travel nurses, Atlanta residents who need temporary transportation, and people planning longer drives or road trips.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Do I need good credit to rent a car?"
+            >
+              <span class="text-base font-semibold text-slate-900">Do I need good credit to rent a car?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              No. DLride does not require a credit check, so your credit history doesn’t have to stand between you and getting on the road.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Are there mileage limits?"
+            >
+              <span class="text-base font-semibold text-slate-900">Are there mileage limits?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              No. DLride rentals include unlimited mileage, giving you the freedom to work, commute, run errands, or travel without watching the odometer.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Can I use a DLride car for Uber, Lyft, or delivery apps?"
+            >
+              <span class="text-base font-semibold text-slate-900">Can I use a DLride car for Uber, Lyft, or delivery apps?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              Yes, DLride has vehicles suited for gig work, including rideshare and delivery. Vehicle requirements can vary by platform, so make sure the car you choose meets the current requirements for the app you plan to use.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for I’m a travel nurse. Can I rent for an assignment?"
+            >
+              <span class="text-base font-semibold text-slate-900">I’m a travel nurse. Can I rent for an assignment?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              Yes. Weekly rentals are a flexible option for travel nurses who need reliable transportation for hospital commutes, rotating shifts, or temporary assignments in Atlanta.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Can I rent even if I’m not a gig worker?"
+            >
+              <span class="text-base font-semibold text-slate-900">Can I rent even if I’m not a gig worker?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              Absolutely. DLride isn’t only for gig work. You can rent for everyday transportation, temporary car needs, leisure driving, or road trips.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Is maintenance included?"
+            >
+              <span class="text-base font-semibold text-slate-900">Is maintenance included?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              Routine maintenance is covered during your rental, so you don’t have to take on the usual upkeep that comes with owning a car.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for What happens if I have a problem on the road?"
+            >
+              <span class="text-base font-semibold text-slate-900">What happens if I have a problem on the road?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              DLride provides 24/7 roadside support, so help is available if something goes wrong while you’re driving.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for How long can I rent a car for?"
+            >
+              <span class="text-base font-semibold text-slate-900">How long can I rent a car for?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              DLride is built around flexible weekly rentals.
+            </div>
+          </div>
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Where does DLride operate?"
+            >
+              <span class="text-base font-semibold text-slate-900">Where does DLride operate?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              DLride serves drivers and renters in Atlanta and the Metro Atlanta area.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section
+      class="relative py-10 overflow-hidden bg-black sm:py-16 lg:py-24 xl:py-32"
+    >
+      <div class="absolute inset-0">
+        <img
+          class="object-cover w-full h-full md:object-left md:scale-150 md:origin-top-left"
+          src="https://images.pexels.com/photos/1386649/pexels-photo-1386649.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
+          alt="Woman in a car"
+        />
+      </div>
+      <div
+        class="absolute inset-0 hidden bg-gradient-to-r md:block from-black to-transparent"
+      ></div>
+      <div class="absolute inset-0 block bg-black/60 md:hidden"></div>
+      <div class="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div class="text-center md:w-2/3 lg:w-1/2 xl:w-1/3 md:text-left">
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200">
+            Whatever the week calls for
+          </p>
+          <h2
+            class="mt-4 text-3xl font-semibold tracking-tight leading-tight text-white sm:text-4xl lg:text-5xl"
+          >
+            There’s a DLride for it.
+          </h2>
+          <p class="mt-4 text-base leading-7 text-gray-200">
+            Work. Commute. Errands. Getaways. Get a reliable weekly car in
+            Atlanta without taking on more commitment than you need.
+          </p>
+          <a
+            href="/booking"
+            class="mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-[#2F5FAF] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#264E91] lg:mt-10"
+          >
+            Start My Rental
+            <i data-lucide="arrow-right" class="h-4 w-4"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-[#122A52] border-white/10 border-t w-full">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid gap-10 md:grid-cols-[2fr_1fr] md:gap-12">
+          <div>
+            <a
+              href="#"
+              class="inline-flex rounded-md focus:outline-none focus:ring-2 focus:ring-[#7CA3E6]"
+            >
+              <img src="/dlride-logo-white.png" alt="DLride" class="h-12 w-36 object-contain object-left" />
+            </a>
+            <p class="mt-4 max-w-md text-sm leading-6 text-blue-200">
+              Reliable weekly car rentals in Atlanta for gig work, travel assignments, everyday driving, and road trips — without a long-term commitment.
+            </p>
+            <div class="mt-5 flex flex-wrap gap-2 text-xs text-blue-100">
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">No credit check</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Unlimited miles</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">24/7 support</span>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-white">Connect</h4>
+            <ul class="mt-4 space-y-3 text-sm text-blue-200">
+              <li><a href="https://drivegig.co/book" class="inline-flex items-center gap-2 transition hover:text-white">Booking <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></li>
+              <li><a href="mailto:hello@dlride.com" class="transition hover:text-white">hello@dlride.com</a></li>
+              <li><a href="tel:+16789542325" class="transition hover:text-white">(678) 954-2325</a></li>
+              <li><a href="https://www.instagram.com/dlride/" target="_blank" rel="noopener noreferrer" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:bg-white/10 hover:text-white" aria-label="DLride on Instagram"><i data-lucide="instagram" class="h-5 w-5"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10 pt-6"
+        >
+          <p class="text-xs text-blue-300">
+            ©
+            <span id="year">2026</span>
+            DLride. All rights reserved. Atlanta, Georgia.
+          </p>
+          <div class="flex items-center gap-4 text-xs text-blue-300">
+            <a href="#" class="hover:text-white transition">Terms</a>
+            <a href="#" class="hover:text-white transition">Privacy</a>
+            <a
+              href="#"
+              class="inline-flex items-center gap-1 hover:text-white transition"
+            >
+              Back to top
+              <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <style>
+      @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+      .vehicle-carousel{scrollbar-width:none;-ms-overflow-style:none}
+      .vehicle-carousel::-webkit-scrollbar{display:none}
+      @keyframes scroll-testimonials{0%{transform:translateY(0)}100%{transform:translateY(calc(-50% - .5rem))}}
+      .testimonial-scroll-container{animation:scroll-testimonials 34s linear infinite;will-change:transform}
+      @media(prefers-reduced-motion:reduce){.testimonial-scroll-container{animation:none}}
+    </style>
+    <script>
+      lucide.createIcons({ attrs: { 'stroke-width': 1.5 } });
+
+      const heroUseSelect = document.getElementById('heroUseSelect');
+      const heroGetStarted = document.getElementById('heroGetStarted');
+      if (heroUseSelect && heroGetStarted) {
+        const updateHeroCta = () => {
+          const hasSelection = Boolean(heroUseSelect.value);
+          heroGetStarted.disabled = !hasSelection;
+          heroGetStarted.setAttribute('aria-disabled', String(!hasSelection));
+        };
+        heroUseSelect.addEventListener('change', updateHeroCta);
+        heroGetStarted.addEventListener('click', () => {
+          if (!heroUseSelect.value) return;
+          window.location.href = `/booking?use=${encodeURIComponent(heroUseSelect.value)}`;
+        });
+        window.addEventListener('pageshow', updateHeroCta);
+        updateHeroCta();
+      }
+
+      function toggleDropdown(id) {
+        const root = document.getElementById(id);
+        const menu = root.querySelector('[data-menu]');
+        const chevron = root.querySelector('[data-chevron]');
+        const isOpen = !menu.classList.contains('hidden');
+        closeAllDropdowns();
+        if (!isOpen) {
+          menu.classList.remove('hidden');
+          chevron.classList.add('rotate-180');
+        }
+      }
+
+      function selectOption(id, value) {
+        const root = document.getElementById(id);
+        root.querySelector('[data-selected]').textContent = value;
+        root.querySelector('[data-selected]').classList.add('text-slate-900', 'font-medium');
+        closeAllDropdowns();
+      }
+
+      function closeAllDropdowns() {
+        document.querySelectorAll('[data-menu]').forEach(m => m.classList.add('hidden'));
+        document.querySelectorAll('[data-chevron]').forEach(c => c.classList.remove('rotate-180'));
+      }
+
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('#carDropdown') && !e.target.closest('#useDropdown')) closeAllDropdowns();
+      });
+
+      const mobileMenuButton = document.getElementById('mobileMenuButton');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', () => {
+          const isOpen = !mobileMenu.classList.contains('hidden');
+          mobileMenu.classList.toggle('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', String(!isOpen));
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+          mobileMenuButton.setAttribute('aria-expanded', 'false');
+        }));
+      }
+
+      const testimonialTrack = document.querySelector('.testimonial-scroll-container');
+      if (testimonialTrack && !testimonialTrack.dataset.loopReady) {
+        [...testimonialTrack.children].forEach(card => {
+          const clone = card.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          testimonialTrack.appendChild(clone);
+        });
+        testimonialTrack.dataset.loopReady = 'true';
+      }
+
+      const vehicleCarousel = document.getElementById('vehicleCarousel');
+      let vehicleAutoScroll;
+
+      function startVehicleAutoScroll() {
+        clearInterval(vehicleAutoScroll);
+        if (!vehicleCarousel || window.innerWidth >= 640 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        vehicleAutoScroll = setInterval(() => {
+          const cards = [...vehicleCarousel.querySelectorAll('article')];
+          const current = cards.reduce((closest, card, index) => {
+            const distance = Math.abs(card.offsetLeft - vehicleCarousel.scrollLeft - vehicleCarousel.offsetLeft);
+            return distance < closest.distance ? { index, distance } : closest;
+          }, { index: 0, distance: Infinity }).index;
+          const next = cards[(current + 1) % cards.length];
+          vehicleCarousel.scrollTo({
+            left: next.offsetLeft - vehicleCarousel.offsetLeft,
+            behavior: 'smooth'
+          });
+        }, 4500);
+      }
+
+      if (vehicleCarousel) {
+        vehicleCarousel.addEventListener('pointerdown', () => clearInterval(vehicleAutoScroll));
+        vehicleCarousel.addEventListener('pointerup', startVehicleAutoScroll);
+        vehicleCarousel.addEventListener('touchend', startVehicleAutoScroll, { passive: true });
+        window.addEventListener('resize', startVehicleAutoScroll);
+        startVehicleAutoScroll();
+      }
+
+      const useCaseCarousel = document.getElementById('useCaseCarousel');
+      let useCaseAutoScroll;
+
+      function startUseCaseAutoScroll() {
+        clearInterval(useCaseAutoScroll);
+        if (!useCaseCarousel || window.innerWidth >= 640 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        useCaseAutoScroll = setInterval(() => {
+          const cards = [...useCaseCarousel.querySelectorAll('article')];
+          const current = cards.reduce((closest, card, index) => {
+            const distance = Math.abs(card.offsetLeft - useCaseCarousel.scrollLeft - useCaseCarousel.offsetLeft);
+            return distance < closest.distance ? { index, distance } : closest;
+          }, { index: 0, distance: Infinity }).index;
+          const next = cards[(current + 1) % cards.length];
+          useCaseCarousel.scrollTo({
+            left: next.offsetLeft - useCaseCarousel.offsetLeft,
+            behavior: 'smooth'
+          });
+        }, 5000);
+      }
+
+      if (useCaseCarousel) {
+        useCaseCarousel.addEventListener('pointerdown', () => clearInterval(useCaseAutoScroll));
+        useCaseCarousel.addEventListener('pointerup', startUseCaseAutoScroll);
+        useCaseCarousel.addEventListener('touchend', startUseCaseAutoScroll, { passive: true });
+        window.addEventListener('resize', startUseCaseAutoScroll);
+        startUseCaseAutoScroll();
+      }
+
+      const rentalDifferenceCarousel = document.getElementById('rentalDifferenceCarousel');
+      let rentalDifferenceAutoScroll;
+
+      function startRentalDifferenceAutoScroll() {
+        clearInterval(rentalDifferenceAutoScroll);
+        if (!rentalDifferenceCarousel || window.innerWidth >= 640 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        rentalDifferenceAutoScroll = setInterval(() => {
+          const cards = [...rentalDifferenceCarousel.querySelectorAll('article')];
+          const current = cards.reduce((closest, card, index) => {
+            const distance = Math.abs(card.offsetLeft - rentalDifferenceCarousel.scrollLeft - rentalDifferenceCarousel.offsetLeft);
+            return distance < closest.distance ? { index, distance } : closest;
+          }, { index: 0, distance: Infinity }).index;
+          const next = cards[(current + 1) % cards.length];
+          rentalDifferenceCarousel.scrollTo({
+            left: next.offsetLeft - rentalDifferenceCarousel.offsetLeft,
+            behavior: 'smooth'
+          });
+        }, 5000);
+      }
+
+      if (rentalDifferenceCarousel) {
+        rentalDifferenceCarousel.addEventListener('pointerdown', () => clearInterval(rentalDifferenceAutoScroll));
+        rentalDifferenceCarousel.addEventListener('pointerup', startRentalDifferenceAutoScroll);
+        rentalDifferenceCarousel.addEventListener('touchend', startRentalDifferenceAutoScroll, { passive: true });
+        window.addEventListener('resize', startRentalDifferenceAutoScroll);
+        startRentalDifferenceAutoScroll();
+      }
+
+    </script>
+    <script type="text/javascript">
+      var EhAPI = EhAPI || {};
+      EhAPI.after_load = function () {
+        EhAPI.set_account('s1n89ior4e65bmpmmk156s3f8g', 'dlride');
+        EhAPI.execute('rules');
+      };
+      (function (d, s, f) {
+        var sc = document.createElement(s);
+        sc.type = 'text/javascript';
+        sc.async = true;
+        sc.src = f;
+        var m = document.getElementsByTagName(s)[0];
+        m.parentNode.insertBefore(sc, m);
+      })(document, 'script', '//d2p078bqz5urf7.cloudfront.net/jsapi/ehform.js?v' + new Date().getHours());
+    </script>
+  </body>
+</html>
