@@ -19,11 +19,11 @@ export const metadata: Metadata = {
       : "http://localhost:3000",
   ),
   title: {
-    default: "DLride | Weekly Car Rentals in Atlanta",
+    default: "Affordable Weekly Car Rentals in Atlanta | DLride Rentals",
     template: "%s | DLride",
   },
   description:
-    "Reliable weekly car rentals in Atlanta for gig work, travel nursing, everyday driving, and road trips — with no credit check and unlimited miles.",
+    "Rent reliable, affordable cars in Atlanta with flexible weekly rentals, unlimited miles, maintenance included, and fast approval. Apply online today.",
   applicationName: "DLride",
   keywords: [
     "weekly car rentals Atlanta",
@@ -39,10 +39,13 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   icons: {
     icon: [
-      { url: "/favicon-32.png", type: "image/png", sizes: "32x32" },
-      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/favicon-64x64.png", type: "image/png", sizes: "64x64" },
+      { url: "/android-chrome-192x192.png", type: "image/png", sizes: "192x192" },
     ],
-    shortcut: "/favicon-32.png",
+    shortcut: "/favicon.ico",
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   openGraph: {
