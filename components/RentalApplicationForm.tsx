@@ -25,6 +25,8 @@ type Fields = {
   state: string;
   postal_code: string;
   rental_start_date: string;
+  pickup_time: string;
+  dropoff_time: string;
   rental_end_date: string;
   intended_vehicle_use: string;
   payment_method: string;
@@ -63,6 +65,8 @@ const initialFields: Fields = {
   state: "",
   postal_code: "",
   rental_start_date: "",
+  pickup_time: "",
+  dropoff_time: "",
   rental_end_date: "",
   intended_vehicle_use: "",
   payment_method: "",
@@ -85,6 +89,8 @@ const backendFieldNames: Partial<Record<string, ErrorKey>> = {
   state: "state",
   postal_code: "postal_code",
   rental_start_date: "rental_start_date",
+  pickup_time: "pickup_time",
+  dropoff_time: "dropoff_time",
   rental_end_date: "rental_end_date",
   intended_vehicle_use: "intended_vehicle_use",
   payment_method: "payment_method",
@@ -316,6 +322,8 @@ export default function RentalApplicationForm() {
       ["state", "Please enter your state."],
       ["postal_code", "Please enter your ZIP code."],
       ["rental_start_date", "Please select a rental start date."],
+      ["pickup_time", "Please select a pickup time."],
+      ["dropoff_time", "Please select a drop-off time."],
       ["rental_end_date", "Please select a rental end date."],
       ["intended_vehicle_use", "Please select how you plan to use the vehicle."],
       ["payment_method", "Please select a preferred payment method."],
@@ -533,6 +541,36 @@ export default function RentalApplicationForm() {
               className={`${inputClass} ${errors.rental_end_date ? errorInputClass : ""}`}
             />
             <FieldError id="rental-end-error" message={errors.rental_end_date} />
+          </div>
+
+          <div>
+            <label htmlFor="pickup_time" className="text-sm font-semibold text-slate-800">Pickup Time <span className="text-red-600" aria-hidden="true">*</span></label>
+            <input
+              id="pickup_time"
+              name="pickup_time"
+              type="time"
+              value={fields.pickup_time}
+              onChange={(event) => updateField("pickup_time", event.target.value)}
+              aria-invalid={Boolean(errors.pickup_time)}
+              aria-describedby={errors.pickup_time ? "pickup-time-error" : undefined}
+              className={`${inputClass} ${errors.pickup_time ? errorInputClass : ""}`}
+            />
+            <FieldError id="pickup-time-error" message={errors.pickup_time} />
+          </div>
+
+          <div>
+            <label htmlFor="dropoff_time" className="text-sm font-semibold text-slate-800">Drop-off Time <span className="text-red-600" aria-hidden="true">*</span></label>
+            <input
+              id="dropoff_time"
+              name="dropoff_time"
+              type="time"
+              value={fields.dropoff_time}
+              onChange={(event) => updateField("dropoff_time", event.target.value)}
+              aria-invalid={Boolean(errors.dropoff_time)}
+              aria-describedby={errors.dropoff_time ? "dropoff-time-error" : undefined}
+              className={`${inputClass} ${errors.dropoff_time ? errorInputClass : ""}`}
+            />
+            <FieldError id="dropoff-time-error" message={errors.dropoff_time} />
           </div>
 
           {rentalWeeks !== null && (
