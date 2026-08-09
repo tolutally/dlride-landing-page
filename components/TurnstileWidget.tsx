@@ -13,7 +13,7 @@ type TurnstileOptions = {
   "refresh-expired"?: "auto" | "manual" | "never";
   "response-field"?: boolean;
   callback: (token: string) => void;
-  "error-callback": () => void;
+  "error-callback": (errorCode: string) => void;
   "expired-callback": () => void;
   "timeout-callback": () => void;
 };
@@ -53,12 +53,14 @@ export default function TurnstileWidget({
   useEffect(() => {
     if (!scriptReady || !siteKey || !containerRef.current || !window.turnstile) return;
 
-    const resetVerification = (message: string) => {
+    const resetVerification = (message: string, shouldReset = true) => {
       onTokenChangeRef.current(null);
       onVerificationErrorRef.current(message);
-      window.setTimeout(() => {
-        if (widgetIdRef.current) window.turnstile?.reset(widgetIdRef.current);
-      }, 0);
+      if (shouldReset) {
+        window.setTimeout(() => {
+          if (widgetIdRef.current) window.turnstile?.reset(widgetIdRef.current);
+        }, 0);
+      }
     };
 
     widgetIdRef.current = window.turnstile.render(containerRef.current, {
@@ -74,7 +76,15 @@ export default function TurnstileWidget({
         onVerificationErrorRef.current();
         onTokenChangeRef.current(token);
       },
-      "error-callback": () => resetVerification("We couldn't verify that you're human. Please try again."),
+      "error-callback": (errorCode) => {
+        const isConfigurationError = ["110100", "110110", "110200", "400020", "400070"].includes(errorCode);
+        resetVerification(
+          isConfigurationError
+            ? "Secure verification is temporarily unavailable. Please try again later."
+            : "We couldn't verify that you're human. Please try again.",
+          !isConfigurationError,
+        );
+      },
       "expired-callback": () => resetVerification("Verification expired. Please complete it again."),
       "timeout-callback": () => resetVerification("Verification timed out. Please try again."),
     });
