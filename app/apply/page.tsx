@@ -132,7 +132,7 @@ export default function ApplyPage() {
 
               <p className="mt-6 text-center text-sm text-slate-500 sm:text-base">
                 Prefer to talk to someone? Call{" "}
-                <a href="tel:+16789542325" className="font-semibold text-[#2F5FAF] hover:text-[#264E91]">(678) 954-2325</a>
+                <a href="tel:+14049091666" className="font-semibold text-[#2F5FAF] hover:text-[#264E91]">(404) 909-1666</a>
               </p>
             </div>
           </section>
@@ -177,13 +177,13 @@ export default function ApplyPage() {
                 <p className="mt-2 text-sm leading-6 text-blue-200">A real person is here if you need a hand.</p>
 
                 <div className="mt-7 space-y-3">
-                  <a href="tel:+16789542325" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
+                  <a href="tel:+14049091666" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-blue-100"><Phone className="h-5 w-5" strokeWidth={STROKE_WIDTH} /></span>
-                    <span><span className="block text-sm font-semibold text-white">Call or text</span><span className="mt-1 block text-sm text-blue-200">+1 678-954-2325</span></span>
+                    <span><span className="block text-sm font-semibold text-white">Call or text</span><span className="mt-1 block text-sm text-blue-200">+1 404-909-1666</span></span>
                   </a>
-                  <a href="mailto:dlriderentals@gmail.com" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
+                  <a href="mailto:hello@dlride.com" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-blue-100"><Mail className="h-5 w-5" strokeWidth={STROKE_WIDTH} /></span>
-                    <span><span className="block text-sm font-semibold text-white">Email</span><span className="mt-1 block text-sm text-blue-200">dlriderentals@gmail.com</span></span>
+                    <span><span className="block text-sm font-semibold text-white">Email</span><span className="mt-1 block text-sm text-blue-200">hello@dlride.com</span></span>
                   </a>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function ApplyPage() {
               <ul className="mt-4 space-y-3 text-sm text-blue-200">
                 <li><a href="https://drivegig.co/book" className="inline-flex items-center gap-2 transition hover:text-white">Booking <ArrowUpRight className="h-4 w-4" strokeWidth={STROKE_WIDTH} /></a></li>
                 <li><a href="mailto:hello@dlride.com" className="transition hover:text-white">hello@dlride.com</a></li>
-                <li><a href="tel:+16789542325" className="transition hover:text-white">(678) 954-2325</a></li>
+                <li><a href="tel:+14049091666" className="transition hover:text-white">(404) 909-1666</a></li>
                 <li><a href="https://www.instagram.com/dlride/" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:bg-white/10 hover:text-white" aria-label="DLride on Instagram"><InstagramIcon className="h-5 w-5" /></a></li>
               </ul>
             </div>
