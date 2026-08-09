@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import {
   AlertCircle,
   CalendarDays,
-  Camera,
   CheckCircle2,
   FileText,
   LoaderCircle,
@@ -203,7 +202,6 @@ function DocumentUpload({
   onChange: (file: File | null) => void;
 }) {
   const pickerRef = useRef<HTMLInputElement>(null);
-  const cameraRef = useRef<HTMLInputElement>(null);
   const errorId = `${name}-error`;
 
   function selectFile(nextFile?: File) {
@@ -213,7 +211,6 @@ function DocumentUpload({
 
   function clearFile() {
     if (pickerRef.current) pickerRef.current.value = "";
-    if (cameraRef.current) cameraRef.current.value = "";
     onChange(null);
   }
 
@@ -247,42 +244,23 @@ function DocumentUpload({
         </div>
       ) : (
         <div className={`mt-3 rounded-xl border border-dashed p-4 ${error ? "border-red-400 bg-red-50/40" : "border-slate-300 bg-slate-50"}`}>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            <label
-              htmlFor={`${name}-picker`}
-              className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2F5FAF] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#264E91] focus-within:ring-4 focus-within:ring-blue-200"
-            >
-              <Upload className="h-4 w-4" aria-hidden="true" /> Choose file
-              <input
-                ref={pickerRef}
-                id={`${name}-picker`}
-                name={name}
-                type="file"
-                disabled={disabled}
-                accept={acceptedDocuments}
-                className="sr-only"
-                aria-describedby={error ? errorId : undefined}
-                onChange={(event) => selectFile(event.target.files?.[0])}
-              />
-            </label>
-            <label
-              htmlFor={`${name}-camera`}
-              className="inline-flex min-h-12 cursor-pointer items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-[#122A52] transition hover:border-[#2F5FAF] hover:bg-blue-50 focus-within:ring-4 focus-within:ring-blue-100"
-            >
-              <Camera className="h-4 w-4" aria-hidden="true" /> Use camera
-              <input
-                ref={cameraRef}
-                id={`${name}-camera`}
-                type="file"
-                disabled={disabled}
-                accept="image/jpeg,image/png"
-                capture="environment"
-                className="sr-only"
-                tabIndex={-1}
-                onChange={(event) => selectFile(event.target.files?.[0])}
-              />
-            </label>
-          </div>
+          <label
+            htmlFor={`${name}-picker`}
+            className="inline-flex min-h-12 w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-[#2F5FAF] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#264E91] focus-within:ring-4 focus-within:ring-blue-200"
+          >
+            <Upload className="h-4 w-4" aria-hidden="true" /> Choose file
+            <input
+              ref={pickerRef}
+              id={`${name}-picker`}
+              name={name}
+              type="file"
+              disabled={disabled}
+              accept={acceptedDocuments}
+              className="sr-only"
+              aria-describedby={error ? errorId : undefined}
+              onChange={(event) => selectFile(event.target.files?.[0])}
+            />
+          </label>
         </div>
       )}
       <FieldError id={errorId} message={error} />
