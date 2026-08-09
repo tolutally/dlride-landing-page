@@ -1,7 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [
+      {
+        source: "/applications",
+        destination: "https://dlride-ops-production.up.railway.app/applications",
+      },
+    ];
+  },
 };
 
 export default nextConfig;
