@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book Your Rental",
+  title: "Apply for a Rental",
   description:
     "Reserve a flexible weekly DLride car rental in Atlanta and get back on the road.",
   openGraph: {
@@ -25,6 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BookingLayout({ children }: { children: React.ReactNode }) {
+export default function ApplyLayout({ children }: { children: React.ReactNode }) {
   return children;
 }

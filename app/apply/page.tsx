@@ -40,7 +40,7 @@ function InstagramIcon({ className }: { className?: string }) {
   );
 }
 
-export default function BookingPage() {
+export default function ApplyPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const year = new Date().getFullYear();
 
@@ -128,9 +128,7 @@ export default function BookingPage() {
                 </li>
               </ul>
 
-              <div className="mt-9">
-                <RentalApplicationForm />
-              </div>
+              <RentalApplicationForm />
 
               <p className="mt-6 text-center text-sm text-slate-500 sm:text-base">
                 Prefer to talk to someone? Call{" "}
