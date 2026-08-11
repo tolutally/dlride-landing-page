@@ -115,7 +115,7 @@
                   <option>Gig work</option>
                   <option>Travel nursing</option>
                   <option>Private use</option>
-                  <option>Road trips</option>
+                  <option>Essential weekly transportation</option>
                 </select>
               </div>
               <div class="flex md:justify-end">
@@ -176,10 +176,10 @@
                 <i data-lucide="life-buoy" class="w-5 h-5 text-white"></i>
               </span>
               <h3 class="mt-0 sm:mt-4 text-sm sm:text-base font-semibold text-white leading-tight">
-                24/7 Roadside Assistance
+                Daytime Roadside Assistance
               </h3>
               <p class="hidden sm:block mt-2 text-sm text-white/75 leading-relaxed">
-                We've got your back anytime, anywhere across Metro Atlanta.
+                Help is available during daytime service hours across Metro Atlanta.
               </p>
             </div>
             <div
@@ -227,7 +227,7 @@
               <img src="/grubhub-logo-clean.png" alt="Grubhub" class="col-span-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:h-14 sm:w-28" />
             </div>
             <p class="mt-3 text-center text-[11px] font-semibold text-[#122A52]/60 sm:text-xs">
-              Hospital shifts • Everyday driving • Road trips • Temporary transportation
+              Hospital shifts • Everyday driving • Essential weekly transportation • Gig work
             </p>
           </div>
         </div>
@@ -253,69 +253,84 @@
 
         <div
           id="vehicleCarousel"
-          class="vehicle-carousel -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 xl:grid-cols-4"
+          class="vehicle-carousel -mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-3"
           aria-label="Available vehicles"
         >
-          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
-            <img
-              class="h-56 w-full object-cover sm:h-64"
-              src="/ford-fusion.avif"
-              alt="Ford Fusion available for rent"
-            />
-            <div class="flex flex-1 flex-col p-6 text-white">
-              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
-              <h3 class="mt-4 text-2xl font-semibold">Ford Fusion</h3>
-              <p class="mt-2 text-base font-semibold text-blue-200">Best for gig workers</p>
-              <p class="mt-2 text-sm leading-relaxed text-slate-300">Fuel-efficient and comfortable for long hours on the road.</p>
-              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Hybrid&nbsp; • &nbsp;Automatic&nbsp; • &nbsp;42 MPG</p>
+          <article class="vehicle-card min-w-[86%] snap-start sm:min-w-0" role="button" tabindex="0" aria-expanded="false" data-car-gallery data-car-name="Chevrolet Malibu" data-economy="Up to 29 city / 36 highway MPG" data-use="Everyday driving &amp; shift commutes" data-images='/car-photos/PHOTO-chevrolet-malibu-2020-2.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-3.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-4.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-5.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-6.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-1jpg.jpg'>
+            <div class="vehicle-photo">
+              <img src="/car-photos/PHOTO-chevrolet-malibu-2020-2.jpg" alt="Chevrolet Malibu exterior, photo 1 of 6" />
+              <span class="vehicle-available">Available</span>
+              <span class="vehicle-view"><i data-lucide="expand"></i> View car</span>
+            </div>
+            <div class="vehicle-content">
+              <p class="vehicle-kicker">Midsize sedan</p>
+              <h3>Chevrolet Malibu</h3>
+              <p class="vehicle-best">Best for everyday driving</p>
+              <p class="vehicle-description">Comfortable, polished, and practical for commutes, errands, and a full week on the move.</p>
+              <div class="vehicle-specs"><span><i data-lucide="users"></i> 5 seats</span><span><i data-lucide="briefcase-business"></i> 4 bags</span><span><i data-lucide="badge-a"></i> Automatic</span></div>
             </div>
           </article>
 
-          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
-            <img
-              class="h-56 w-full object-cover sm:h-64"
-              src="/kia-optima-2.jpg"
-              alt="Kia Optima available for rent"
-            />
-            <div class="flex flex-1 flex-col p-6 text-white">
-              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
-              <h3 class="mt-4 text-2xl font-semibold">Kia Optima</h3>
-              <p class="mt-2 text-base font-semibold text-blue-200">Best for private use</p>
-              <p class="mt-2 text-sm leading-relaxed text-slate-300">A practical, dependable car for everyday driving around Atlanta.</p>
-              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Automatic&nbsp; • &nbsp;38 MPG</p>
+          <article class="vehicle-card min-w-[86%] snap-start sm:min-w-0" role="button" tabindex="0" aria-expanded="false" data-car-gallery data-car-name="Hyundai Elantra" data-economy="Up to 33 city / 43 highway MPG" data-use="Gig work &amp; fuel-conscious driving" data-images='/car-photos/hyundai-elantra-1.JPG|/car-photos/hyundai-elantra-2.JPG|/car-photos/hyundai-elantra-3.JPG|/car-photos/hyundai-elantra.4.JPG|/car-photos/hyundai-elantra-5.JPG|/car-photos/hyundai-elantra-6.JPG'>
+            <div class="vehicle-photo">
+              <img src="/car-photos/hyundai-elantra-1.JPG" alt="Hyundai Elantra exterior, photo 1 of 6" />
+              <span class="vehicle-available">Available</span>
+              <span class="vehicle-view"><i data-lucide="expand"></i> View car</span>
+            </div>
+            <div class="vehicle-content">
+              <p class="vehicle-kicker">Compact sedan</p>
+              <h3>Hyundai Elantra</h3>
+              <p class="vehicle-best">Best for gig workers</p>
+              <p class="vehicle-description">Efficient and easy to drive for delivery routes, rideshare hours, and busy weekly schedules.</p>
+              <div class="vehicle-specs"><span><i data-lucide="users"></i> 5 seats</span><span><i data-lucide="briefcase-business"></i> 3 bags</span><span><i data-lucide="badge-a"></i> Automatic</span></div>
             </div>
           </article>
 
-          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
-            <img
-              class="h-56 w-full object-cover sm:h-64"
-              src="/hyundai-sonata.jpg"
-              alt="Hyundai Sonata available for rent"
-            />
-            <div class="flex flex-1 flex-col p-6 text-white">
-              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
-              <h3 class="mt-4 text-2xl font-semibold">Hyundai Sonata</h3>
-              <p class="mt-2 text-base font-semibold text-blue-200">Best for travel nurses</p>
-              <p class="mt-2 text-sm leading-relaxed text-slate-300">Reliable and comfortable for repeated weekly commutes and shift-based schedules.</p>
-              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Automatic&nbsp; • &nbsp;40 MPG</p>
+          <article class="vehicle-card min-w-[86%] snap-start sm:min-w-0" role="button" tabindex="0" aria-expanded="false" data-car-gallery data-car-name="Nissan Altima" data-economy="Up to 27 city / 39 highway MPG" data-use="Travel nurses &amp; longer weekly drives" data-images='/car-photos/nissan-altima-1.JPG|/car-photos/nissan-altima-2.JPG|/car-photos/nissan-altima-3.JPG|/car-photos/nissan-altima-4.JPG|/car-photos/nissan-altima-5.JPG|/car-photos/nissan-altima-6.JPG'>
+            <div class="vehicle-photo">
+              <img src="/car-photos/nissan-altima-1.JPG" alt="Nissan Altima exterior, photo 1 of 6" />
+              <span class="vehicle-available">Available</span>
+              <span class="vehicle-view"><i data-lucide="expand"></i> View car</span>
             </div>
-          </article>
-
-          <article class="flex min-w-[86%] snap-start flex-col overflow-hidden bg-[#202e42] shadow-sm sm:min-w-0">
-            <img
-              class="h-56 w-full object-cover sm:h-64"
-              src="/2016-nissan-altima.jpg"
-              alt="Nissan Altima available for rent"
-            />
-            <div class="flex flex-1 flex-col p-6 text-white">
-              <span class="inline-flex bg-[#2F5FAF] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider">Available</span>
-              <h3 class="mt-4 text-2xl font-semibold">Nissan Altima</h3>
-              <p class="mt-2 text-base font-semibold text-blue-200">Best for leisure rides &amp; road trips</p>
-              <p class="mt-2 text-sm leading-relaxed text-slate-300">Smooth and roomy for weekend outings and longer drives.</p>
-              <p class="mt-auto border-t border-white/15 pt-5 text-sm text-slate-300">Automatic&nbsp; • &nbsp;39 MPG</p>
+            <div class="vehicle-content">
+              <p class="vehicle-kicker">Midsize sedan</p>
+              <h3>Nissan Altima</h3>
+              <p class="vehicle-best">Best for travel nurses &amp; long commutes</p>
+              <p class="vehicle-description">Smooth, roomy, and comfortable for longer weekly drives, demanding schedules, and shift-to-shift travel.</p>
+              <div class="vehicle-specs"><span><i data-lucide="users"></i> 5 seats</span><span><i data-lucide="briefcase-business"></i> 4 bags</span><span><i data-lucide="badge-a"></i> Automatic</span></div>
             </div>
           </article>
         </div>
+
+        <section id="vehicleDetail" class="vehicle-detail" hidden aria-live="polite" aria-label="Selected vehicle details">
+          <div class="vehicle-detail-gallery">
+            <img id="vehicleDetailImage" src="" alt="" />
+            <div class="vehicle-detail-shade" aria-hidden="true"></div>
+            <div class="vehicle-detail-heading">
+              <p id="vehicleDetailType"></p>
+              <h3 id="vehicleDetailName"></h3>
+            </div>
+            <button id="vehicleDetailPrev" class="vehicle-detail-nav vehicle-detail-prev" type="button" aria-label="Previous vehicle photo"><i data-lucide="chevron-left"></i></button>
+            <button id="vehicleDetailNext" class="vehicle-detail-nav vehicle-detail-next" type="button" aria-label="Next vehicle photo"><i data-lucide="chevron-right"></i></button>
+            <div id="vehicleDetailDots" class="vehicle-detail-dots"></div>
+            <span id="vehicleDetailCount" class="vehicle-detail-count"></span>
+          </div>
+          <div class="vehicle-detail-info">
+            <button id="vehicleDetailClose" class="vehicle-detail-close" type="button" aria-label="Close vehicle details"><i data-lucide="x"></i></button>
+            <p class="vehicle-detail-eyebrow">Built for the week ahead</p>
+            <h3 id="vehicleDetailInfoName"></h3>
+            <p id="vehicleDetailGoodFor" class="vehicle-detail-good-for"></p>
+            <p id="vehicleDetailDescription" class="vehicle-detail-copy"></p>
+            <dl class="vehicle-detail-specs">
+              <div><dt><i data-lucide="fuel"></i> Fuel economy</dt><dd id="vehicleDetailEconomy"></dd></div>
+              <div><dt><i data-lucide="users"></i> Capacity</dt><dd id="vehicleDetailCapacity"></dd></div>
+              <div><dt><i data-lucide="gauge"></i> Transmission</dt><dd>Automatic</dd></div>
+              <div><dt><i data-lucide="shield-check"></i> Weekly essentials</dt><dd>Maintenance and daytime roadside assistance</dd></div>
+            </dl>
+            <a href="/apply" class="vehicle-detail-cta">Check availability <i data-lucide="arrow-right"></i></a>
+            <p class="vehicle-detail-note">Actual fuel economy varies by model year, condition, and driving habits.</p>
+          </div>
+        </section>
       </div>
     </section>
 
@@ -337,10 +352,14 @@
           </p>
         </div>
 
-        <div class="relative z-10 mt-12">
-          <div class="grid grid-cols-1 gap-3 rounded-2xl border border-blue-100 bg-blue-50/70 p-3 sm:grid-cols-2 lg:grid-cols-4 lg:gap-4 lg:p-4">
-            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+        <div class="relative z-10 mt-12 grid gap-12 lg:grid-cols-[minmax(0,1.25fr)_minmax(20rem,0.75fr)] lg:items-center lg:gap-14">
+          <div class="relative">
+            <div class="pointer-events-none absolute -inset-4" aria-hidden="true">
+              <div class="mx-auto h-full w-full opacity-40 blur-xl" style="background:linear-gradient(110deg,#173f88 0%,#3f7ee8 28%,#55c7d9 52%,#35b89f 74%,#f0bd63 100%)"></div>
+            </div>
+            <div class="relative grid grid-cols-1 gap-3 rounded-2xl border border-white/70 bg-gradient-to-br from-white/95 via-blue-50/95 to-cyan-50/90 p-3 shadow-xl shadow-blue-950/10 backdrop-blur-md sm:grid-cols-2 lg:gap-4 lg:p-4">
+            <article class="group flex items-start gap-4 rounded-xl border border-indigo-100 bg-white/85 p-4 transition hover:border-indigo-200 hover:bg-indigo-50/70 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#173f88] to-[#6d73df] text-white shadow-sm shadow-indigo-500/25">
                 <i data-lucide="badge-check" class="h-5 w-5" aria-hidden="true"></i>
               </div>
               <div>
@@ -349,18 +368,18 @@
               </div>
             </article>
 
-            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+            <article class="group flex items-start gap-4 rounded-xl border border-teal-100 bg-white/85 p-4 transition hover:border-teal-200 hover:bg-teal-50/70 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#157a78] to-[#35b89f] text-white shadow-sm shadow-teal-500/25">
                 <i data-lucide="infinity" class="h-5 w-5" aria-hidden="true"></i>
               </div>
               <div>
                 <h3 class="text-base font-semibold tracking-tight md:text-lg">Unlimited miles</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">Drive for work, commute across Atlanta, run errands, or take a road trip without counting every mile.</p>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Drive for work, commute across Atlanta, handle appointments, or run errands without counting every mile.</p>
               </div>
             </article>
 
-            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+            <article class="group flex items-start gap-4 rounded-xl border border-amber-100 bg-white/85 p-4 transition hover:border-amber-200 hover:bg-amber-50/70 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#c47b22] to-[#f0bd63] text-white shadow-sm shadow-amber-500/25">
                 <i data-lucide="wrench" class="h-5 w-5" aria-hidden="true"></i>
               </div>
               <div>
@@ -369,15 +388,44 @@
               </div>
             </article>
 
-            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/80 p-4 transition hover:bg-blue-50 md:p-5">
-              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-t from-[#264E91] to-[#4478c8] text-white shadow-sm shadow-blue-500/20">
+            <article class="group flex items-start gap-4 rounded-xl border border-sky-100 bg-white/85 p-4 transition hover:border-sky-200 hover:bg-sky-50/70 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#2878b8] to-[#55c7d9] text-white shadow-sm shadow-sky-500/25">
                 <i data-lucide="life-buoy" class="h-5 w-5" aria-hidden="true"></i>
               </div>
               <div>
-                <h3 class="text-base font-semibold tracking-tight md:text-lg">24/7 roadside support</h3>
-                <p class="mt-2 text-sm leading-6 text-slate-600">If something goes wrong on the road, help is available whenever you need it.</p>
+                <h3 class="text-base font-semibold tracking-tight md:text-lg">Daytime roadside assistance</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">If something goes wrong on the road, help is available during daytime service hours.</p>
               </div>
             </article>
+            </div>
+          </div>
+
+          <div class="relative text-center lg:pl-14 lg:text-left">
+            <div class="pointer-events-none absolute -inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-[#7CA3E6] to-transparent lg:-inset-y-10 lg:left-0 lg:right-auto lg:h-auto lg:w-px lg:bg-gradient-to-b" aria-hidden="true"></div>
+            <div class="pointer-events-none absolute left-1/2 top-5 h-32 w-3/4 -translate-x-1/2 rounded-full bg-blue-200/35 blur-3xl lg:left-14 lg:translate-x-0" aria-hidden="true"></div>
+            <div class="relative pt-10 lg:pt-0">
+              <p class="text-sm font-semibold text-slate-600 sm:text-base">All of these for just</p>
+
+              <div class="mt-7 flex items-end justify-center text-[#122A52] sm:mt-9 lg:justify-start" aria-label="350 dollars per week">
+                <span class="mb-2 text-xl font-bold text-slate-400 sm:mb-3 sm:text-2xl">$</span>
+                <span class="text-7xl font-bold leading-none tracking-[-0.07em] sm:text-8xl">350</span>
+                <span class="mb-2 ml-2 text-lg font-bold text-slate-400 sm:mb-3 sm:text-xl">/week</span>
+              </div>
+
+              <div class="mx-auto mt-6 flex max-w-sm items-start gap-3 rounded-xl border border-teal-100 bg-gradient-to-r from-white/85 to-teal-50/80 p-4 text-left shadow-sm shadow-teal-900/5 lg:mx-0">
+                <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-teal-100 text-[#157a78]"><i data-lucide="shield-check" class="h-4 w-4" aria-hidden="true"></i></span>
+                <div>
+                  <p class="text-sm font-bold text-[#122A52]">Mandatory, affordable insurance</p>
+                  <p class="mt-1 text-sm text-slate-500">$50/week</p>
+                </div>
+              </div>
+
+              <a href="/apply" class="mt-7 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-xl bg-[#122A52] px-8 py-3.5 text-base font-bold text-white shadow-lg shadow-blue-950/15 transition hover:-translate-y-0.5 hover:bg-[#2F5FAF] focus:outline-none focus:ring-2 focus:ring-[#2F5FAF] focus:ring-offset-2 sm:w-auto">
+                Get started
+                <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
+              </a>
+              <p class="mt-4 text-sm text-slate-500">No extra charges, no ridiculous deposit needed.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -405,7 +453,7 @@
 
         <div class="mt-14 grid grid-cols-1 gap-x-14 gap-y-10 px-5 text-center sm:mt-20 sm:px-0 sm:text-left lg:grid-cols-3">
           <article class="sm:flex sm:items-start">
-            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-50 text-2xl font-bold text-[#2F5FAF] ring-2 ring-slate-900 sm:mx-0">
+            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-indigo-50 to-blue-100 text-2xl font-bold text-[#173f88] ring-2 ring-indigo-200 sm:mx-0">
               01
             </div>
             <div class="mt-5 sm:ml-6 sm:mt-0">
@@ -417,7 +465,7 @@
           </article>
 
           <article class="sm:flex sm:items-start">
-            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-50 text-2xl font-bold text-[#2F5FAF] ring-2 ring-slate-900 sm:mx-0">
+            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-teal-50 to-emerald-100 text-2xl font-bold text-[#157a78] ring-2 ring-teal-200 sm:mx-0">
               02
             </div>
             <div class="mt-5 sm:ml-6 sm:mt-0">
@@ -429,7 +477,7 @@
           </article>
 
           <article class="sm:flex sm:items-start">
-            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-blue-50 text-2xl font-bold text-[#2F5FAF] ring-2 ring-slate-900 sm:mx-0">
+            <div class="mx-auto flex h-24 w-24 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-amber-50 to-orange-100 text-2xl font-bold text-[#a8651b] ring-2 ring-amber-200 sm:mx-0">
               03
             </div>
             <div class="mt-5 sm:ml-6 sm:mt-0">
@@ -443,7 +491,7 @@
         <div class="mt-12 flex justify-center">
           <a
             href="/apply"
-            class="inline-flex items-center justify-center gap-3 rounded-full bg-[#2F5FAF] px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-blue-900/15 transition hover:-translate-y-0.5 hover:bg-[#264E91]"
+            class="inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#173f88] to-[#157a78] px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-teal-900/15 transition hover:-translate-y-0.5 hover:from-[#2456a4] hover:to-[#1e918a]"
           >
             Get Started
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
@@ -453,18 +501,21 @@
     </section>
 
     <!-- DIFFERENT KIND OF RENTAL -->
-    <section class="bg-[#111c32] px-4 py-16 text-white sm:px-6 sm:py-20 lg:py-24">
-      <div class="mx-auto max-w-7xl">
+    <section id="rental-difference" class="relative overflow-hidden bg-slate-50 px-4 py-16 text-slate-900 sm:px-6 sm:py-20 lg:py-24">
+      <div class="pointer-events-none absolute -left-28 top-16 h-80 w-80 rounded-full bg-indigo-200/35 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-24 bottom-12 h-80 w-80 rounded-full bg-teal-200/40 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute left-1/2 top-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-amber-100/45 blur-3xl" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl">
         <div class="grid items-end gap-8 lg:grid-cols-2 lg:gap-16">
           <div>
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-blue-300">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#157a78]">
               A different kind of car rental
             </p>
             <h2 class="mt-4 max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               Built for the weeks when you need a car — not a commitment.
             </h2>
           </div>
-          <div class="space-y-4 text-sm leading-7 text-slate-300 sm:text-base">
+          <div class="space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
             <p>Traditional rentals are designed around short trips. Leasing is designed around years.</p>
             <p>DLride sits in the middle: reliable weekly cars for people who need flexibility now, whether that’s for work, an assignment, everyday life, or a trip out of town.</p>
           </div>
@@ -503,7 +554,7 @@
             <img src="/maintenance-art-sky.png" alt="Maintenance and roadside assistance coverage" class="aspect-[16/9] w-full object-cover" />
             <div class="p-6">
               <h3 class="text-xl font-semibold tracking-tight">The expensive stuff is covered</h3>
-              <p class="mt-3 text-sm leading-6 text-slate-400">Routine maintenance and roadside support are included, so keeping the car running isn’t another problem to solve.</p>
+              <p class="mt-3 text-sm leading-6 text-slate-400">Routine maintenance and daytime roadside assistance are included, so keeping the car running isn’t another problem to solve.</p>
             </div>
           </article>
 
@@ -518,7 +569,7 @@
           </article>
         </div>
 
-        <p class="mx-auto mt-12 max-w-4xl border-t border-white/10 pt-8 text-center text-lg font-semibold leading-8 text-blue-100 sm:text-xl">
+        <p class="mx-auto mt-12 max-w-4xl border-t border-slate-200 pt-8 text-center text-lg font-semibold leading-8 text-slate-700 sm:text-xl">
           Different reason for renting. Same idea: get the car you need without taking on more than you need.
         </p>
       </div>
@@ -540,71 +591,74 @@
         >
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Gig workers</p>
-            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">When your car stops, your income can stop too.</span></h3>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-teal-100 px-1">When your car stops, your income can stop too.</span></h3>
             <p class="mt-5 text-sm leading-7 text-slate-600">Get a reliable weekly rental for Uber, Lyft, DoorDash, Instacart and other gig work — with unlimited miles and maintenance covered.</p>
             <div class="mt-auto pt-6"><img src="/gig-worker.webp" alt="Gig worker driving with a phone mounted in the car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
 
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Travel nurses</p>
-            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">A new assignment shouldn’t mean scrambling for transportation.</span></h3>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-sky-100 px-1">A new assignment shouldn’t mean scrambling for transportation.</span></h3>
             <p class="mt-5 text-sm leading-7 text-slate-600">Get a dependable car for hospital commutes, rotating shifts and temporary placements without taking on a long-term lease.</p>
             <div class="mt-auto pt-6"><img src="/travel-nurse.jpg" alt="Travel nurse loading her bag into a car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
 
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Everyday drivers</p>
-            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">Life doesn’t wait because your car is unavailable.</span></h3>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-amber-100 px-1">Life doesn’t wait because your car is unavailable.</span></h3>
             <p class="mt-5 text-sm leading-7 text-slate-600">Use DLride for work, school runs, appointments, errands and everything else you still need to get done.</p>
             <div class="mt-auto pt-6"><img src="/everyday-driver.webp" alt="Everyday driver getting comfortable in a car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
 
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
-            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Road trips &amp; leisure</p>
-            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-blue-200 px-1">Sometimes you just need a car for the plans you already made.</span></h3>
-            <p class="mt-5 text-sm leading-7 text-slate-600">Take a comfortable weekly rental for weekend getaways, longer drives and time out of the city — without committing to a car you don’t need year-round.</p>
-            <div class="mt-auto pt-6"><img src="/road-trip-driver.avif" alt="Driver taking a car on a road trip" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Essential weekly transportation</p>
+            <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-indigo-100 px-1">A dependable car when your week can’t wait.</span></h3>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Get to shifts, appointments, errands and everyday responsibilities with a flexible weekly rental — without committing to a car you don’t need year-round.</p>
+            <div class="mt-auto pt-6"><img src="/essential-weekly-transportation.avif" alt="Driver using a car for essential weekly transportation" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
         </div>
       </div>
     </section>
 
     <!-- REAL DRIVER STORIES -->
-    <section id="stories" class="scroll-mt-20 relative px-4 py-6 sm:px-6">
-      <div class="mx-auto max-w-7xl rounded-3xl border border-white/10 bg-[#122A52] p-5 sm:p-6">
+    <section id="stories" class="scroll-mt-20 relative overflow-hidden bg-slate-50 px-4 py-16 sm:px-6 sm:py-20">
+      <div class="pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-teal-300/30 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute -right-24 bottom-4 h-80 w-80 rounded-full bg-amber-200/35 blur-3xl" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute left-1/2 top-1/3 h-56 w-96 -translate-x-1/2 rounded-full bg-blue-300/20 blur-3xl" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-7xl rounded-3xl border border-white/80 bg-white/75 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur-xl sm:p-6">
         <div class="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-6">
-          <span class="text-3xl font-medium tracking-tight text-white sm:text-4xl">Testimonials</span>
-          <span aria-hidden="true" class="hidden h-10 w-px bg-white/10 sm:block"></span>
-          <span class="text-sm text-blue-200">stories from Atlanta renters</span>
+          <span class="text-3xl font-medium tracking-tight text-slate-900 sm:text-4xl">The Joyful Ride-Along</span>
+          <span aria-hidden="true" class="hidden h-10 w-px bg-slate-200 sm:block"></span>
+          <span class="text-sm font-semibold text-[#157a78]">Unfiltered joy from Atlanta's drivers</span>
         </div>
-        <div class="mt-4 h-px bg-white/10"></div>
+        <div class="mt-4 h-px bg-gradient-to-r from-teal-200 via-blue-200 to-amber-200"></div>
 
         <div class="mt-6 grid grid-cols-1 items-start gap-6 lg:grid-cols-12 lg:gap-8">
           <div class="lg:col-span-6 lg:sticky lg:top-8">
-            <h2 class="text-4xl font-light leading-[1.05] tracking-tighter text-white sm:text-5xl">
-              Different weeks. Same need for a reliable car.
+            <h2 class="text-4xl font-light leading-[1.05] tracking-tighter text-slate-900 sm:text-5xl">
+              New Weeks, Same Smooth Ride
             </h2>
-            <p class="mt-4 max-w-[55ch] text-sm leading-6 text-blue-200 sm:text-base">
-              From gig shifts and hospital rotations to everyday errands and weekend escapes, see how Atlanta renters use DLride to keep their week moving.
+            <p class="mt-4 max-w-[55ch] text-sm leading-6 text-slate-600 sm:text-base">
+              From high-stakes gig shifts and essential hospital rotations to errands and weekend escapes, discover how local drivers join the joyride to keep Atlanta moving.
             </p>
 
             <div class="mt-5 grid grid-cols-3 gap-3">
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
-                <div class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">100+</div>
-                <div class="mt-1 text-xs text-blue-200">Happy Drivers</div>
+              <div class="rounded-2xl border border-indigo-100 bg-indigo-50/70 p-3 sm:p-4">
+                <div class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">100+</div>
+                <div class="mt-1 text-xs text-indigo-600">Happy Drivers</div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
-                <div class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">99%</div>
-                <div class="mt-1 text-xs text-blue-200">Uptime Rate</div>
+              <div class="rounded-2xl border border-teal-100 bg-teal-50/70 p-3 sm:p-4">
+                <div class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">99%</div>
+                <div class="mt-1 text-xs text-teal-700">Uptime Rate</div>
               </div>
-              <div class="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4">
-                <div class="text-2xl font-semibold tracking-tight text-white sm:text-3xl">24/7</div>
-                <div class="mt-1 text-xs text-blue-200">Roadside support</div>
+              <div class="rounded-2xl border border-amber-100 bg-amber-50/70 p-3 sm:p-4">
+                <div class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Daytime</div>
+                <div class="mt-1 text-xs text-amber-700">Roadside assistance</div>
               </div>
             </div>
 
-            <div class="mt-5 h-px bg-white/10"></div>
-            <a href="/apply" class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#2F5FAF] px-6 py-3 text-sm font-medium text-white transition hover:bg-[#264E91]">
+            <div class="mt-5 h-px bg-slate-200"></div>
+            <a href="/apply" class="mt-5 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#3f7ee8] to-[#35b89f] px-6 py-3 text-sm font-medium text-white transition hover:from-[#5590ee] hover:to-[#46c8ad]">
               Get Started
               <i data-lucide="arrow-right" class="h-4 w-4"></i>
             </a>
@@ -665,17 +719,17 @@
 
             <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
               <div class="flex items-center gap-3">
-                <div class="grid h-11 w-11 place-items-center rounded-full bg-[#2F5FAF] text-xs font-bold text-white ring-2 ring-white/20">A&amp;J</div>
+                <div class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-[#3f7ee8] to-[#35b89f] text-xs font-bold text-white ring-2 ring-white">A&amp;J</div>
                 <div>
-                  <h3 class="text-lg font-semibold tracking-tight text-white">Alicia &amp; Jordan</h3>
+                  <h3 class="text-lg font-semibold tracking-tight text-white">Jordan M.</h3>
                   <p class="mt-0.5 text-xs text-blue-200">Atlanta</p>
                 </div>
               </div>
               <div class="my-4 h-px bg-white/10"></div>
               <div class="text-sm tracking-widest text-amber-400" aria-label="5 out of 5 stars">★★★★★</div>
-              <p class="mt-3 text-sm leading-6 text-blue-100 sm:text-base">“We wanted a car for a week away without the usual rental hassle. It gave us the freedom to go where we wanted without worrying about mileage.”</p>
+              <p class="mt-3 text-sm leading-6 text-blue-100 sm:text-base">“My car was in the shop, but I still had shifts and appointments to make. DLride kept my week moving without the usual rental hassle.”</p>
               <div class="mt-4 flex flex-wrap items-center gap-2">
-                <span class="rounded-full bg-amber-400/10 px-3 py-1 text-xs text-amber-300">Road trip</span>
+                <span class="rounded-full bg-amber-400/10 px-3 py-1 text-xs text-amber-300">Essential transportation</span>
                 <span class="text-xs text-blue-300">Unlimited miles</span>
               </div>
             </article>
@@ -696,7 +750,7 @@
           Before you get on the road, here’s what to know.
         </h2>
         <p class="mx-auto mt-4 max-w-2xl text-center text-sm leading-relaxed text-slate-500">
-          Weekly rentals in Atlanta for gig work, travel assignments, everyday driving, and road trips.
+          Weekly rentals in Atlanta for gig work, travel assignments, everyday driving, and essential weekly transportation.
         </p>
         <div class="mx-auto mt-10 max-w-3xl divide-y divide-slate-200 border-t border-slate-200">
           <div>
@@ -710,7 +764,7 @@
               <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
             </button>
             <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
-              DLride is for anyone who needs a reliable car without a long-term commitment — including gig workers, travel nurses, Atlanta residents who need temporary transportation, and people planning longer drives or road trips.
+              DLride is for anyone who needs a reliable car without a long-term commitment — including gig workers, travel nurses, shift workers, and Atlanta residents who need essential weekly transportation.
             </div>
           </div>
           <div>
@@ -780,7 +834,7 @@
               <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
             </button>
             <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
-              Absolutely. DLride isn’t only for gig work. You can rent for everyday transportation, temporary car needs, leisure driving, or road trips.
+              Absolutely. DLride isn’t only for gig work. You can rent for everyday driving, appointments, shift commutes, or other essential weekly transportation needs.
             </div>
           </div>
           <div>
@@ -808,7 +862,7 @@
               <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
             </button>
             <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
-              DLride provides 24/7 roadside support, so help is available if something goes wrong while you’re driving.
+              DLride provides daytime roadside assistance, so help is available during service hours if something goes wrong while you’re driving.
             </div>
           </div>
           <div>
@@ -874,7 +928,7 @@
           </p>
           <a
             href="/apply"
-            class="mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-[#2F5FAF] px-7 py-4 text-sm font-semibold text-white transition hover:bg-[#264E91] lg:mt-10"
+            class="mt-8 inline-flex items-center justify-center gap-3 rounded-full bg-gradient-to-r from-[#3f7ee8] to-[#35b89f] px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-black/15 transition hover:from-[#5590ee] hover:to-[#46c8ad] lg:mt-10"
           >
             Start My Rental
             <i data-lucide="arrow-right" class="h-4 w-4"></i>
@@ -882,7 +936,7 @@
         </div>
       </div>
     </section>
-    <footer class="bg-[#122A52] border-white/10 border-t w-full">
+    <footer class="w-full border-t border-white/10 bg-gradient-to-br from-[#0b1422] via-[#122A52] to-[#10343a]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="grid gap-10 md:grid-cols-[2fr_1fr] md:gap-12">
           <div>
@@ -893,12 +947,12 @@
               <img src="/dlride-logo-white.png" alt="DLride" class="h-12 w-36 object-contain object-left" />
             </a>
             <p class="mt-4 max-w-md text-sm leading-6 text-blue-200">
-              Reliable weekly car rentals in Atlanta for gig work, travel assignments, everyday driving, and road trips — without a long-term commitment.
+              Reliable weekly car rentals in Atlanta for gig work, travel assignments, everyday driving, and essential weekly transportation — without a long-term commitment.
             </p>
             <div class="mt-5 flex flex-wrap gap-2 text-xs text-blue-100">
               <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">No credit check</span>
               <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Unlimited miles</span>
-              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">24/7 support</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Daytime roadside assistance</span>
             </div>
           </div>
           <div>
@@ -906,7 +960,7 @@
             <ul class="mt-4 space-y-3 text-sm text-blue-200">
               <li><a href="https://drivegig.co/book" class="inline-flex items-center gap-2 transition hover:text-white">Booking <i data-lucide="arrow-up-right" class="h-4 w-4"></i></a></li>
               <li><a href="mailto:hello@dlride.com" class="transition hover:text-white">hello@dlride.com</a></li>
-              <li><a href="tel:+14049091666" class="transition hover:text-white">(404) 909-1666</a></li>
+              <!-- <li><a href="tel:+14049091666" class="transition hover:text-white">(404) 909-1666</a></li> -->
               <li><a href="https://www.instagram.com/dlride/" target="_blank" rel="noopener noreferrer" class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:bg-white/10 hover:text-white" aria-label="DLride on Instagram"><i data-lucide="instagram" class="h-5 w-5"></i></a></li>
             </ul>
           </div>
@@ -938,6 +992,47 @@
       @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
       .vehicle-carousel{scrollbar-width:none;-ms-overflow-style:none}
       .vehicle-carousel::-webkit-scrollbar{display:none}
+      .vehicle-card{position:relative;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(211,224,241,.32);border-radius:1.5rem;background:radial-gradient(circle at 78% 25%,rgba(188,205,219,.3) 0%,rgba(77,98,119,.14) 24%,transparent 48%),linear-gradient(155deg,#182431 0%,#101923 48%,#070d14 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 28px 65px rgba(8,20,38,.22);color:#fff;cursor:pointer;outline:none;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease}
+      .vehicle-card:hover{border-color:rgba(218,231,247,.48);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 34px 78px rgba(8,20,38,.29);transform:translateY(-4px)}
+      .vehicle-card:focus-visible{box-shadow:0 0 0 3px #fff,0 0 0 6px #2F5FAF,0 28px 65px rgba(8,20,38,.22)}
+      .vehicle-card.selected{border-color:#79a8ff;box-shadow:0 0 0 2px #2F5FAF,0 34px 78px rgba(8,20,38,.32)}
+      .vehicle-photo{position:relative;height:22rem;overflow:hidden;background:radial-gradient(circle at 72% 42%,#c7d2dc 0%,#758391 36%,#17212b 78%,#080d13 100%)}
+      .vehicle-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,12,18,.42) 0%,transparent 23%,transparent 72%,rgba(6,12,18,.18) 100%),linear-gradient(180deg,rgba(6,12,18,.2) 0%,transparent 25%,transparent 52%,rgba(10,17,24,.48) 76%,#101923 100%);pointer-events:none}
+      .vehicle-photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.03);transition:opacity .2s ease,transform .65s ease,filter .35s ease}
+      .vehicle-card:hover .vehicle-photo img{filter:saturate(.98) contrast(1.04);transform:scale(1.025)}
+      .vehicle-available,.vehicle-view{position:absolute;z-index:2;top:1rem;display:inline-flex;align-items:center;gap:.35rem;border:1px solid rgba(255,255,255,.22);border-radius:999px;background:rgba(14,30,51,.72);padding:.48rem .75rem;backdrop-filter:blur(9px);font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em}
+      .vehicle-available{left:1rem}.vehicle-view{right:1rem}.vehicle-view svg{width:.85rem;height:.85rem}
+      .vehicle-content{position:relative;z-index:2;display:flex;flex:1;flex-direction:column;margin-top:-2.25rem;padding:3.35rem 1.5rem 1.5rem;background:linear-gradient(180deg,transparent 0%,rgba(16,25,35,.92) 2.25rem,rgba(7,13,20,.96) 100%)}
+      .vehicle-kicker{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#8fb4ff}.vehicle-content h3{margin-top:.45rem;font-size:1.65rem;font-weight:700;letter-spacing:-.025em}.vehicle-best{margin-top:.55rem;font-size:.95rem;font-weight:600;color:#c6d7fa}.vehicle-description{margin-top:.6rem;font-size:.85rem;line-height:1.65;color:#b8c3d4}
+      .vehicle-specs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto;padding-top:1.4rem}.vehicle-specs span{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;background:rgba(255,255,255,.09);padding:.48rem .65rem;font-size:.7rem;color:#dce5f3}.vehicle-specs svg{width:.9rem;height:.9rem}
+      .vehicle-detail{display:grid;grid-template-columns:minmax(0,7fr) minmax(19rem,3fr);margin-top:2rem;overflow:hidden;border:1px solid #d8e0ea;border-radius:1.5rem;background:#fff;box-shadow:0 28px 75px rgba(14,35,64,.18)}
+      .vehicle-detail[hidden]{display:none}
+      .vehicle-detail-gallery{position:relative;min-height:37rem;overflow:hidden;background:#101923}
+      .vehicle-detail-gallery>img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;transition:opacity .18s ease}
+      .vehicle-detail-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,11,18,.7) 0%,transparent 27%,transparent 65%,rgba(6,13,21,.82) 100%);pointer-events:none}
+      .vehicle-detail-heading{position:absolute;z-index:2;top:2rem;left:2rem;color:#fff}.vehicle-detail-heading p{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:#b9d0f8}.vehicle-detail-heading h3{margin-top:.4rem;font-size:clamp(1.75rem,3vw,2.6rem);font-weight:750;letter-spacing:-.04em}
+      .vehicle-detail-nav{position:absolute;z-index:3;top:50%;display:grid;width:3rem;height:3rem;place-items:center;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(8,19,32,.68);color:#fff;transform:translateY(-50%);backdrop-filter:blur(8px);transition:.2s}.vehicle-detail-nav:hover{background:#2F5FAF}.vehicle-detail-prev{left:1rem}.vehicle-detail-next{right:1rem}
+      .vehicle-detail-dots{position:absolute;z-index:3;left:50%;bottom:1.5rem;display:flex;gap:.45rem;transform:translateX(-50%)}.vehicle-detail-dot{width:.45rem;height:.45rem;border:0;border-radius:999px;background:rgba(255,255,255,.5);padding:0}.vehicle-detail-dot.active{width:1.5rem;background:#fff}
+      .vehicle-detail-count{position:absolute;z-index:3;right:1.25rem;bottom:1.25rem;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(8,19,32,.66);padding:.45rem .7rem;color:#fff;font-size:.7rem;font-weight:700;backdrop-filter:blur(8px)}
+      .vehicle-detail-info{position:relative;display:flex;flex-direction:column;padding:2.5rem 2rem;color:#172033}.vehicle-detail-close{position:absolute;top:1.1rem;right:1.1rem;display:grid;width:2.35rem;height:2.35rem;place-items:center;border:0;border-radius:999px;background:#eef2f7;color:#172033}.vehicle-detail-close:hover{background:#dfe8f5}.vehicle-detail-close svg{width:1rem}
+      .vehicle-detail-eyebrow{padding-right:2rem;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:#2F5FAF}.vehicle-detail-info>h3{margin-top:.65rem;font-size:2rem;font-weight:750;letter-spacing:-.035em}.vehicle-detail-good-for{margin-top:.45rem;color:#2F5FAF;font-size:.9rem;font-weight:700}.vehicle-detail-copy{margin-top:1rem;color:#64748b;font-size:.85rem;line-height:1.65}
+      .vehicle-detail-specs{margin-top:1.5rem;border-top:1px solid #e1e7ef}.vehicle-detail-specs>div{padding:1rem 0;border-bottom:1px solid #e1e7ef}.vehicle-detail-specs dt{display:flex;align-items:center;gap:.5rem;color:#64748b;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em}.vehicle-detail-specs dt svg{width:1rem;height:1rem;color:#2F5FAF}.vehicle-detail-specs dd{margin:.35rem 0 0;font-size:.85rem;font-weight:700;color:#172033}
+      .vehicle-detail-cta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;background:#173f88;padding:1rem 1.1rem;color:#fff;font-size:.78rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;transition:.2s}.vehicle-detail-cta:hover{background:#2F5FAF}.vehicle-detail-cta svg{width:1rem}.vehicle-detail-note{margin-top:.8rem;color:#8a96a8;font-size:.62rem;line-height:1.5}
+      #stories .testimonial-scroll-container>article{border-color:#e2e8f0;background:rgba(255,255,255,.9);box-shadow:0 12px 34px rgba(15,23,42,.07)}
+      #stories .testimonial-scroll-container h3{color:#172033}
+      #stories .testimonial-scroll-container p{color:#64748b}
+      #stories .testimonial-scroll-container .text-blue-300{color:#475569}
+      #stories .testimonial-scroll-container article>.my-4{background:#e2e8f0}
+      #rental-difference #rentalDifferenceCarousel article{border-color:rgba(255,255,255,.9);background:rgba(255,255,255,.82);box-shadow:0 16px 42px rgba(15,23,42,.08);backdrop-filter:blur(10px)}
+      #rental-difference #rentalDifferenceCarousel article:hover{border-color:#99f6e4;background:rgba(240,253,250,.9);transform:translateY(-2px)}
+      #rental-difference #rentalDifferenceCarousel h3{color:#172033}
+      #rental-difference #rentalDifferenceCarousel p{color:#64748b}
+      @media(max-width:639px){.vehicle-carousel{scroll-padding-inline:1rem}.vehicle-card{min-width:88%;border-radius:1.2rem}.vehicle-photo{height:21rem}.vehicle-content{padding-right:1.2rem;padding-left:1.2rem}.vehicle-specs{gap:.4rem}.vehicle-specs span{padding:.42rem .55rem;font-size:.65rem}}
+      @media(min-width:640px) and (max-width:1023px){.vehicle-card:last-child{grid-column:1/-1;max-width:calc(50% - .75rem);width:100%;justify-self:center}}
+      @media(max-width:1023px) and (min-width:841px){.vehicle-detail{grid-template-columns:minmax(0,3fr) minmax(18rem,2fr)}.vehicle-detail-gallery{min-height:34rem}.vehicle-detail-info{padding:2.25rem 1.5rem}}
+      @media(max-width:840px){.vehicle-detail{grid-template-columns:1fr}.vehicle-detail-gallery{min-height:30rem}.vehicle-detail-info{min-height:34rem}}
+      @media(max-width:639px){.vehicle-detail{margin-top:1.25rem;border-radius:1.15rem}.vehicle-detail-gallery{min-height:22rem}.vehicle-detail-heading{top:1.25rem;left:1.25rem;right:4rem}.vehicle-detail-heading h3{font-size:1.65rem}.vehicle-detail-nav{width:2.6rem;height:2.6rem}.vehicle-detail-prev{left:.65rem}.vehicle-detail-next{right:.65rem}.vehicle-detail-dots{bottom:1.1rem}.vehicle-detail-count{right:.8rem;bottom:.8rem;padding:.36rem .55rem}.vehicle-detail-info{min-height:auto;padding:2.25rem 1.25rem 1.5rem}.vehicle-detail-info>h3{font-size:1.7rem}.vehicle-detail-specs>div{padding:.85rem 0}.vehicle-detail-cta{width:100%;margin-top:1.5rem}.vehicle-detail-note{font-size:.6rem}}
+      @media(max-width:380px){.vehicle-card{min-width:91%}.vehicle-photo{height:19rem}.vehicle-detail-gallery{min-height:20rem}.vehicle-detail-dots{left:44%}.vehicle-detail-heading h3{font-size:1.45rem}.vehicle-detail-info{padding-right:1rem;padding-left:1rem}}
       @keyframes scroll-testimonials{0%{transform:translateY(0)}100%{transform:translateY(calc(-50% - .5rem))}}
       .testimonial-scroll-container{animation:scroll-testimonials 34s linear infinite;will-change:transform}
       @media(prefers-reduced-motion:reduce){.testimonial-scroll-container{animation:none}}
@@ -1015,33 +1110,98 @@
       }
 
       const vehicleCarousel = document.getElementById('vehicleCarousel');
-      let vehicleAutoScroll;
+      const vehicleDetail = document.getElementById('vehicleDetail');
+      const vehicleDetailImage = document.getElementById('vehicleDetailImage');
+      const vehicleDetailDots = document.getElementById('vehicleDetailDots');
+      const vehicleDetailCount = document.getElementById('vehicleDetailCount');
+      let detailImages = [];
+      let detailImageIndex = 0;
 
-      function startVehicleAutoScroll() {
-        clearInterval(vehicleAutoScroll);
-        if (!vehicleCarousel || window.innerWidth >= 640 || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-        vehicleAutoScroll = setInterval(() => {
-          const cards = [...vehicleCarousel.querySelectorAll('article')];
-          const current = cards.reduce((closest, card, index) => {
-            const distance = Math.abs(card.offsetLeft - vehicleCarousel.scrollLeft - vehicleCarousel.offsetLeft);
-            return distance < closest.distance ? { index, distance } : closest;
-          }, { index: 0, distance: Infinity }).index;
-          const next = cards[(current + 1) % cards.length];
-          vehicleCarousel.scrollTo({
-            left: next.offsetLeft - vehicleCarousel.offsetLeft,
-            behavior: 'smooth'
+      const showDetailPhoto = index => {
+        if (!detailImages.length) return;
+        detailImageIndex = (index + detailImages.length) % detailImages.length;
+        const carName = document.getElementById('vehicleDetailName').textContent;
+        vehicleDetailImage.style.opacity = '0';
+        window.setTimeout(() => {
+          vehicleDetailImage.src = detailImages[detailImageIndex];
+          vehicleDetailImage.alt = `${carName} photo ${detailImageIndex + 1} of ${detailImages.length}`;
+          vehicleDetailCount.textContent = `${detailImageIndex + 1} / ${detailImages.length}`;
+          vehicleDetailDots.querySelectorAll('button').forEach((dot, dotIndex) => {
+            dot.classList.toggle('active', dotIndex === detailImageIndex);
+            dot.setAttribute('aria-current', dotIndex === detailImageIndex ? 'true' : 'false');
           });
-        }, 4500);
-      }
+          vehicleDetailImage.style.opacity = '1';
+        }, 110);
+      };
 
-      if (vehicleCarousel) {
-        vehicleCarousel.addEventListener('pointerdown', () => clearInterval(vehicleAutoScroll));
-        vehicleCarousel.addEventListener('pointerup', startVehicleAutoScroll);
-        vehicleCarousel.addEventListener('touchend', startVehicleAutoScroll, { passive: true });
-        window.addEventListener('resize', startVehicleAutoScroll);
-        startVehicleAutoScroll();
-      }
+      const openVehicleDetail = card => {
+        const name = card.dataset.carName;
+        const type = card.querySelector('.vehicle-kicker').textContent;
+        const goodFor = card.dataset.use;
+        const description = card.querySelector('.vehicle-description').textContent;
+        const capacity = [...card.querySelectorAll('.vehicle-specs span')].slice(0, 2).map(item => item.textContent.trim()).join(' • ');
+        detailImages = card.dataset.images.split('|');
+        detailImageIndex = 0;
+
+        document.querySelectorAll('[data-car-gallery]').forEach(item => {
+          const selected = item === card;
+          item.classList.toggle('selected', selected);
+          item.setAttribute('aria-expanded', String(selected));
+        });
+        document.getElementById('vehicleDetailType').textContent = type;
+        document.getElementById('vehicleDetailName').textContent = name;
+        document.getElementById('vehicleDetailInfoName').textContent = name;
+        document.getElementById('vehicleDetailGoodFor').textContent = `Good for: ${goodFor}`;
+        document.getElementById('vehicleDetailDescription').textContent = description;
+        document.getElementById('vehicleDetailEconomy').textContent = card.dataset.economy;
+        document.getElementById('vehicleDetailCapacity').textContent = capacity;
+        vehicleDetailDots.innerHTML = '';
+
+        detailImages.forEach((_, index) => {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = `vehicle-detail-dot${index === 0 ? ' active' : ''}`;
+          dot.setAttribute('aria-label', `Show ${name} photo ${index + 1}`);
+          dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+          dot.addEventListener('click', () => showDetailPhoto(index));
+          vehicleDetailDots.appendChild(dot);
+        });
+
+        vehicleDetail.hidden = false;
+        showDetailPhoto(0);
+        if (window.innerWidth < 900) vehicleDetail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      };
+
+      document.querySelectorAll('[data-car-gallery]').forEach(card => {
+        card.setAttribute('aria-controls', 'vehicleDetail');
+        card.addEventListener('click', () => openVehicleDetail(card));
+        card.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openVehicleDetail(card);
+          }
+        });
+      });
+
+      document.getElementById('vehicleDetailPrev').addEventListener('click', () => showDetailPhoto(detailImageIndex - 1));
+      document.getElementById('vehicleDetailNext').addEventListener('click', () => showDetailPhoto(detailImageIndex + 1));
+      const vehicleDetailGallery = vehicleDetail.querySelector('.vehicle-detail-gallery');
+      let galleryTouchStartX = 0;
+      vehicleDetailGallery.addEventListener('touchstart', event => {
+        galleryTouchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+      vehicleDetailGallery.addEventListener('touchend', event => {
+        const distance = event.changedTouches[0].clientX - galleryTouchStartX;
+        if (Math.abs(distance) < 45) return;
+        showDetailPhoto(detailImageIndex + (distance < 0 ? 1 : -1));
+      }, { passive: true });
+      document.getElementById('vehicleDetailClose').addEventListener('click', () => {
+        vehicleDetail.hidden = true;
+        document.querySelectorAll('[data-car-gallery]').forEach(card => {
+          card.classList.remove('selected');
+          card.setAttribute('aria-expanded', 'false');
+        });
+      });
 
       const useCaseCarousel = document.getElementById('useCaseCarousel');
       let useCaseAutoScroll;

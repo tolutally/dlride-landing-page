@@ -12,7 +12,6 @@ import {
   Mail,
   MapPin,
   Menu,
-  Phone,
   PhoneCall,
   Sparkles,
 } from "lucide-react";
@@ -130,10 +129,10 @@ export default function ApplyPage() {
 
               <RentalApplicationForm />
 
-              <p className="mt-6 text-center text-sm text-slate-500 sm:text-base">
+              {/* <p className="mt-6 text-center text-sm text-slate-500 sm:text-base">
                 Prefer to talk to someone? Call{" "}
                 <a href="tel:+14049091666" className="font-semibold text-[#2F5FAF] hover:text-[#264E91]">(404) 909-1666</a>
-              </p>
+              </p> */}
             </div>
           </section>
 
@@ -177,10 +176,10 @@ export default function ApplyPage() {
                 <p className="mt-2 text-sm leading-6 text-blue-200">A real person is here if you need a hand.</p>
 
                 <div className="mt-7 space-y-3">
-                  <a href="tel:+14049091666" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
+                  {/* <a href="tel:+14049091666" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-blue-100"><Phone className="h-5 w-5" strokeWidth={STROKE_WIDTH} /></span>
                     <span><span className="block text-sm font-semibold text-white">Call or text</span><span className="mt-1 block text-sm text-blue-200">+1 404-909-1666</span></span>
-                  </a>
+                  </a> */}
                   <a href="mailto:hello@dlride.com" className="flex items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 transition hover:bg-white/10">
                     <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/10 text-blue-100"><Mail className="h-5 w-5" strokeWidth={STROKE_WIDTH} /></span>
                     <span><span className="block text-sm font-semibold text-white">Email</span><span className="mt-1 block text-sm text-blue-200">hello@dlride.com</span></span>
@@ -207,7 +206,7 @@ export default function ApplyPage() {
                 <img src="/instacart-logo-clean.png" alt="Instacart" className="col-span-2 col-start-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:col-start-auto sm:h-14 sm:w-28" />
                 <img src="/grubhub-logo-clean.png" alt="Grubhub" className="col-span-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:h-14 sm:w-28" />
               </div>
-              <p className="mt-3 text-center text-[11px] font-semibold text-[#122A52]/60 sm:text-xs">Hospital shifts • Everyday driving • Road trips • Temporary transportation</p>
+              <p className="mt-3 text-center text-[11px] font-semibold text-[#122A52]/60 sm:text-xs">Hospital shifts • Everyday driving • Essential weekly transportation • Gig work</p>
             </div>
           </div>
         </div>
@@ -220,11 +219,11 @@ export default function ApplyPage() {
               <Link href="/" className="inline-flex rounded-md focus:outline-none focus:ring-2 focus:ring-[#7CA3E6]">
                 <img src="/dlride-logo-white.png" alt="DLride" className="h-12 w-36 object-contain object-left" />
               </Link>
-              <p className="mt-4 max-w-md text-sm leading-6 text-blue-200">Reliable weekly car rentals in Atlanta for gig work, travel assignments, everyday driving, and road trips — without a long-term commitment.</p>
+              <p className="mt-4 max-w-md text-sm leading-6 text-blue-200">Reliable weekly car rentals in Atlanta for gig work, travel assignments, everyday driving, and essential weekly transportation — without a long-term commitment.</p>
               <div className="mt-5 flex flex-wrap gap-2 text-xs text-blue-100">
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">No credit check</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Unlimited miles</span>
-                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">24/7 support</span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Daytime roadside assistance</span>
               </div>
             </div>
             <div>
@@ -232,7 +231,7 @@ export default function ApplyPage() {
               <ul className="mt-4 space-y-3 text-sm text-blue-200">
                 <li><a href="https://drivegig.co/book" className="inline-flex items-center gap-2 transition hover:text-white">Booking <ArrowUpRight className="h-4 w-4" strokeWidth={STROKE_WIDTH} /></a></li>
                 <li><a href="mailto:hello@dlride.com" className="transition hover:text-white">hello@dlride.com</a></li>
-                <li><a href="tel:+14049091666" className="transition hover:text-white">(404) 909-1666</a></li>
+                {/* <li><a href="tel:+14049091666" className="transition hover:text-white">(404) 909-1666</a></li> */}
                 <li><a href="https://www.instagram.com/dlride/" target="_blank" rel="noopener noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:bg-white/10 hover:text-white" aria-label="DLride on Instagram"><InstagramIcon className="h-5 w-5" /></a></li>
               </ul>
             </div>

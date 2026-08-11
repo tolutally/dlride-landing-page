@@ -571,7 +571,7 @@ export default function RentalApplicationForm() {
             >
               <option value="">Select one</option>
               <option value="gig_work">Gig work (Uber Eats, Grubhub, etc.)</option>
-              <option value="road_trips">Road trips</option>
+              <option value="essential_weekly_transportation">Essential weekly transportation</option>
               <option value="personal_use">Personal use</option>
               <option value="travel_nursing">Travel nursing</option>
               <option value="other">Other</option>
