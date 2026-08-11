@@ -43,7 +43,10 @@ export default function TurnstileWidget({
   const widgetIdRef = useRef<string | null>(null);
   const onTokenChangeRef = useRef(onTokenChange);
   const onVerificationErrorRef = useRef(onVerificationError);
-  const [scriptReady, setScriptReady] = useState(false);
+
+  const [scriptReady, setScriptReady] = useState(
+    () => typeof window !== "undefined" && Boolean(window.turnstile)
+  );
 
   useEffect(() => {
     onTokenChangeRef.current = onTokenChange;
@@ -51,46 +54,83 @@ export default function TurnstileWidget({
   }, [onTokenChange, onVerificationError]);
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.turnstile) {
+      setScriptReady(true);
+    }
+  }, []);
+
+  useEffect(() => {
     if (!scriptReady || !siteKey || !containerRef.current || !window.turnstile) return;
 
+    let stallTimer: number | undefined;
+    const clearStallTimer = () => {
+      if (stallTimer !== undefined) window.clearTimeout(stallTimer);
+    };
+
     const resetVerification = (message: string, shouldReset = true) => {
+      clearStallTimer();
       onTokenChangeRef.current(null);
       onVerificationErrorRef.current(message);
       if (shouldReset) {
         window.setTimeout(() => {
-          if (widgetIdRef.current) window.turnstile?.reset(widgetIdRef.current);
+          if (widgetIdRef.current) {
+            try {
+              window.turnstile?.reset(widgetIdRef.current);
+            } catch {
+              // Ignore reset errors
+            }
+          }
         }, 0);
       }
     };
 
-    widgetIdRef.current = window.turnstile.render(containerRef.current, {
-      sitekey: siteKey,
-      action: "rental_application",
-      appearance: "interaction-only",
-      size: "flexible",
-      theme: "light",
-      retry: "never",
-      "refresh-expired": "never",
-      "response-field": false,
-      callback: (token) => {
-        onVerificationErrorRef.current();
-        onTokenChangeRef.current(token);
-      },
-      "error-callback": (errorCode) => {
-        const isConfigurationError = ["110100", "110110", "110200", "400020", "400070"].includes(errorCode);
-        resetVerification(
-          isConfigurationError
-            ? "Secure verification is temporarily unavailable. Please try again later."
-            : "We couldn't verify that you're human. Please try again.",
-          !isConfigurationError,
-        );
-      },
-      "expired-callback": () => resetVerification("Verification expired. Please complete it again."),
-      "timeout-callback": () => resetVerification("Verification timed out. Please try again."),
-    });
+    try {
+      widgetIdRef.current = window.turnstile.render(containerRef.current, {
+        sitekey: siteKey,
+        action: "rental_application",
+        appearance: "always",
+        size: "flexible",
+        theme: "light",
+        retry: "never",
+        "refresh-expired": "never",
+        "response-field": false,
+        callback: (token) => {
+          clearStallTimer();
+          onVerificationErrorRef.current();
+          onTokenChangeRef.current(token);
+        },
+        "error-callback": (errorCode) => {
+          const isConfigurationError = ["110100", "110110", "110200", "400020", "400070"].includes(errorCode);
+          resetVerification(
+            isConfigurationError
+              ? "Secure verification is temporarily unavailable. Please try again later."
+              : "We couldn't verify that you're human. Please try again.",
+            !isConfigurationError,
+          );
+        },
+        "expired-callback": () => resetVerification("Verification expired. Please complete it again."),
+        "timeout-callback": () => resetVerification("Verification timed out. Please try again."),
+      });
+    } catch {
+      resetVerification("Could not initialize security verification. Please reload the page.", false);
+    }
+
+    stallTimer = window.setTimeout(() => {
+      resetVerification(
+        "Verification is taking longer than expected. Try reloading the page or opening this site in a standard browser tab.",
+        false,
+      );
+    }, 15_000);
 
     return () => {
-      if (widgetIdRef.current) window.turnstile?.remove(widgetIdRef.current);
+      clearStallTimer();
+      if (widgetIdRef.current) {
+        try {
+          window.turnstile?.remove(widgetIdRef.current);
+        } catch {
+          // Ignore remove errors
+        }
+      }
       widgetIdRef.current = null;
     };
   }, [scriptReady, siteKey]);
@@ -110,6 +150,7 @@ export default function TurnstileWidget({
         src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
         strategy="afterInteractive"
         onReady={() => setScriptReady(true)}
+        onError={() => onVerificationErrorRef.current("Security verification script failed to load. Please check your network or ad blocker.")}
       />
       <div ref={containerRef} className="min-h-[65px] w-full" aria-label="Security verification" />
     </>

@@ -335,7 +335,7 @@ export default function RentalApplicationForm() {
     if (!fields.sms_consent) {
       next.sms_consent = "You must consent to SMS notifications before submitting.";
     }
-    if (!turnstileToken) {
+    if (process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && !turnstileToken) {
       next.turnstile = "Please complete the security verification before submitting.";
     }
 
@@ -670,7 +670,7 @@ export default function RentalApplicationForm() {
           </div>
           <TurnstileWidget
             key={turnstileAttempt}
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA"}
             onTokenChange={(token) => {
               setTurnstileToken(token);
               if (token) setErrors((current) => ({ ...current, turnstile: undefined }));
@@ -697,7 +697,7 @@ export default function RentalApplicationForm() {
       <div className="sticky bottom-0 z-20 -mx-6 mt-8 border-t border-slate-200 bg-white/95 px-6 py-4 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:pb-0">
         <button
           type="submit"
-          disabled={isSubmitting || !turnstileToken}
+          disabled={isSubmitting}
           className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-[#2F5FAF] px-6 py-4 text-base font-bold text-white shadow-lg shadow-blue-900/20 transition hover:bg-[#264E91] focus:outline-none focus:ring-4 focus:ring-blue-200 disabled:cursor-not-allowed disabled:bg-slate-400"
         >
           {isSubmitting ? <LoaderCircle className="h-5 w-5 animate-spin" aria-hidden="true" /> : <ShieldCheck className="h-5 w-5" aria-hidden="true" />}
