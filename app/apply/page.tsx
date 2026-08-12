@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import Link from "next/link";
 import Script from "next/script";
 import {
@@ -127,7 +127,9 @@ export default function ApplyPage() {
                 </li>
               </ul>
 
-              <RentalApplicationForm />
+              <Suspense fallback={<div className="mt-10 min-h-[400px] animate-pulse rounded-2xl bg-slate-100" />}>
+                <RentalApplicationForm />
+              </Suspense>
 
               {/* <p className="mt-6 text-center text-sm text-slate-500 sm:text-base">
                 Prefer to talk to someone? Call{" "}

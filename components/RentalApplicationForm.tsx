@@ -1,7 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import {
   AlertCircle,
   CalendarDays,
@@ -270,6 +270,7 @@ function DocumentUpload({
 
 export default function RentalApplicationForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [fields, setFields] = useState(initialFields);
   const [driversLicense, setDriversLicense] = useState<File | null>(null);
   const [proofOfAddress, setProofOfAddress] = useState<File | null>(null);
@@ -282,6 +283,37 @@ export default function RentalApplicationForm() {
   const rentalDays = daysBetween(fields.rental_start_date, fields.rental_end_date);
   const rentalWeeks = rentalDays !== null && rentalDays >= 7 ? Math.ceil(rentalDays / 7) : null;
   const today = todayISO();
+
+  useEffect(() => {
+    const rawUse = searchParams.get("use") || searchParams.get("intended_vehicle_use");
+    const rawPayment = searchParams.get("payment") || searchParams.get("payment_method");
+
+    let matchedUse: string | null = null;
+    if (rawUse) {
+      const lower = rawUse.toLowerCase();
+      if (lower.includes("gig")) matchedUse = "gig_work";
+      else if (lower.includes("essential") || lower.includes("weekly")) matchedUse = "essential_weekly_use";
+      else if (lower.includes("nursing")) matchedUse = "travel_nursing";
+      else if (lower.includes("personal") || lower.includes("private")) matchedUse = "personal_use";
+      else if (lower.includes("other")) matchedUse = "other";
+    }
+
+    let matchedPayment: string | null = null;
+    if (rawPayment) {
+      const lower = rawPayment.toLowerCase();
+      if (lower.includes("cash")) matchedPayment = "cash";
+      else if (lower.includes("transfer")) matchedPayment = "e-transfer";
+      else if (lower.includes("card")) matchedPayment = "card";
+    }
+
+    if (matchedUse || matchedPayment) {
+      setFields((current) => ({
+        ...current,
+        ...(matchedUse ? { intended_vehicle_use: matchedUse } : {}),
+        ...(matchedPayment ? { payment_method: matchedPayment } : {}),
+      }));
+    }
+  }, [searchParams]);
 
   function updateField<Key extends keyof Fields>(key: Key, value: Fields[Key]) {
     setFields((current) => ({ ...current, [key]: value }));
@@ -571,7 +603,7 @@ export default function RentalApplicationForm() {
             >
               <option value="">Select one</option>
               <option value="gig_work">Gig work (Uber Eats, Grubhub, etc.)</option>
-              <option value="essential_weekly_transportation">Essential weekly transportation</option>
+              <option value="essential_weekly_use">Essential weekly transportation</option>
               <option value="personal_use">Personal use</option>
               <option value="travel_nursing">Travel nursing</option>
               <option value="other">Other</option>
@@ -591,7 +623,7 @@ export default function RentalApplicationForm() {
               className={`${inputClass} ${errors.payment_method ? errorInputClass : ""}`}
             >
               <option value="">Select one</option>
-              <option value="Cash">Cash</option>
+              <option value="cash">Cash</option>
               <option value="e-transfer">e-Transfer</option>
               <option value="card">Card</option>
             </select>
