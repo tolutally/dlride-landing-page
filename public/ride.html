@@ -1261,8 +1261,8 @@
 
     </script>
 
-    <!-- Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these. Widget starts minimized (aria-hidden) until the toggle button is clicked. -->
-    <div id="bp-embedded-webchat" style="position:fixed;bottom:calc(84px + env(safe-area-inset-bottom));right:calc(20px + env(safe-area-inset-right));z-index:9999;width:380px;height:600px;max-width:calc(100vw - 40px);max-height:calc(100vh - 110px);"></div>
+    <!-- Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these. Widget starts minimized until the toggle button is clicked. -->
+    <div id="bp-embedded-webchat" style="position:fixed;bottom:calc(84px + env(safe-area-inset-bottom));right:calc(20px + env(safe-area-inset-right));z-index:9999;width:380px;height:600px;max-width:calc(100vw - 40px);max-height:calc(100vh - 110px);visibility:hidden;pointer-events:none;"></div>
     <button
       id="bp-toggle-chat"
       aria-label="Chat with us"
@@ -1271,5 +1271,46 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
       <span>Chat with us</span>
     </button>
+    <script>
+      // Botpress's toggleChatId auto-binding doesn't reliably fire and aria-hidden never changes, so drive open/close ourselves via its state API
+      (function () {
+        function start() {
+          var toggleBtn = document.getElementById('bp-toggle-chat');
+          var container = document.getElementById('bp-embedded-webchat');
+          if (!toggleBtn || !container) return;
+          function sync() {
+            var open = window.botpress && window.botpress.state === 'opened';
+            container.style.visibility = open ? 'visible' : 'hidden';
+            container.style.pointerEvents = open ? 'auto' : 'none';
+          }
+          toggleBtn.addEventListener('click', function () {
+            if (!window.botpress) return;
+            if (window.botpress.state === 'opened') {
+              window.botpress.close();
+            } else {
+              window.botpress.open();
+            }
+            sync();
+          });
+          document.addEventListener('click', function (e) {
+            var path = e.composedPath ? e.composedPath() : [];
+            var isClose = path.some(function (el) {
+              return el && el.getAttribute && el.getAttribute('aria-label') === 'Close Chatbot Button';
+            });
+            if (isClose && window.botpress) {
+              window.botpress.close();
+              sync();
+            }
+          }, true);
+          sync();
+          setInterval(sync, 200);
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', start);
+        } else {
+          start();
+        }
+      })();
+    </script>
   </body>
 </html>

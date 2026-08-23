@@ -255,7 +255,7 @@ export default function ApplyPage() {
       <div
         id="bp-embedded-webchat"
         className="fixed bottom-[calc(5.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] z-50 h-[600px] w-[380px] max-w-[calc(100vw-2.5rem)]"
-        style={{ maxHeight: "calc(100vh - 7rem)" }}
+        style={{ maxHeight: "calc(100vh - 7rem)", visibility: "hidden", pointerEvents: "none" }}
       />
       <button
         id="bp-toggle-chat"
@@ -268,6 +268,49 @@ export default function ApplyPage() {
 
       <Script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js" strategy="afterInteractive" />
       <Script src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js" strategy="afterInteractive" />
+      {/* Botpress's toggleChatId auto-binding doesn't reliably fire and aria-hidden never changes, so drive open/close ourselves via its state API */}
+      <Script id="bp-toggle-sync" strategy="afterInteractive">
+        {`
+          (function () {
+            function start() {
+              var toggleBtn = document.getElementById("bp-toggle-chat");
+              var container = document.getElementById("bp-embedded-webchat");
+              if (!toggleBtn || !container) return;
+              function sync() {
+                var open = window.botpress && window.botpress.state === "opened";
+                container.style.visibility = open ? "visible" : "hidden";
+                container.style.pointerEvents = open ? "auto" : "none";
+              }
+              toggleBtn.addEventListener("click", function () {
+                if (!window.botpress) return;
+                if (window.botpress.state === "opened") {
+                  window.botpress.close();
+                } else {
+                  window.botpress.open();
+                }
+                sync();
+              });
+              document.addEventListener("click", function (e) {
+                var path = e.composedPath ? e.composedPath() : [];
+                var isClose = path.some(function (el) {
+                  return el && el.getAttribute && el.getAttribute("aria-label") === "Close Chatbot Button";
+                });
+                if (isClose && window.botpress) {
+                  window.botpress.close();
+                  sync();
+                }
+              }, true);
+              sync();
+              setInterval(sync, 200);
+            }
+            if (document.readyState === "loading") {
+              document.addEventListener("DOMContentLoaded", start);
+            } else {
+              start();
+            }
+          })();
+        `}
+      </Script>
     </>
   );
 }
