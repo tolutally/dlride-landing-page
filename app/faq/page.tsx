@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, MessageCircle } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
@@ -113,6 +113,20 @@ export default function FaqPage() {
           </div>
         </section>
       </main>
+
+      {/* Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these */}
+      <div
+        id="bp-embedded-webchat"
+        className="fixed bottom-24 right-5 z-50 h-[600px] w-[380px] max-w-[calc(100vw-2.5rem)]"
+        style={{ maxHeight: "calc(100vh - 7rem)" }}
+      />
+      <button
+        id="bp-toggle-chat"
+        aria-label="Open chat"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#173f88] text-white shadow-2xl shadow-black/25 transition hover:bg-[#122e66]"
+      >
+        <MessageCircle className="h-6 w-6" aria-hidden="true" />
+      </button>
 
       <Script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js" strategy="afterInteractive" />
       <Script src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js" strategy="afterInteractive" />

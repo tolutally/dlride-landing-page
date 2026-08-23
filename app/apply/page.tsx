@@ -11,6 +11,7 @@ import {
   HeartHandshake,
   Mail,
   MapPin,
+  MessageCircle,
   Menu,
   PhoneCall,
   Sparkles,
@@ -249,6 +250,20 @@ export default function ApplyPage() {
           </div>
         </div>
       </footer>
+
+      {/* Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these */}
+      <div
+        id="bp-embedded-webchat"
+        className="fixed bottom-24 right-5 z-50 h-[600px] w-[380px] max-w-[calc(100vw-2.5rem)]"
+        style={{ maxHeight: "calc(100vh - 7rem)" }}
+      />
+      <button
+        id="bp-toggle-chat"
+        aria-label="Open chat"
+        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#2F5FAF] text-white shadow-2xl shadow-black/25 transition hover:bg-[#264E91]"
+      >
+        <MessageCircle className="h-6 w-6" strokeWidth={STROKE_WIDTH} />
+      </button>
 
       <Script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js" strategy="afterInteractive" />
       <Script src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js" strategy="afterInteractive" />
