@@ -1261,14 +1261,15 @@
 
     </script>
 
-    <!-- Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these -->
-    <div id="bp-embedded-webchat" style="position:fixed;bottom:90px;right:20px;z-index:9999;width:380px;height:600px;max-width:calc(100vw - 40px);max-height:calc(100vh - 110px);"></div>
+    <!-- Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these. Widget starts minimized (aria-hidden) until the toggle button is clicked. -->
+    <div id="bp-embedded-webchat" style="position:fixed;bottom:calc(84px + env(safe-area-inset-bottom));right:calc(20px + env(safe-area-inset-right));z-index:9999;width:380px;height:600px;max-width:calc(100vw - 40px);max-height:calc(100vh - 110px);"></div>
     <button
       id="bp-toggle-chat"
-      aria-label="Open chat"
-      style="position:fixed;bottom:20px;right:20px;z-index:9999;width:56px;height:56px;border-radius:9999px;background:#2F5FAF;color:#fff;border:none;box-shadow:0 10px 25px rgba(0,0,0,.25);cursor:pointer;display:flex;align-items:center;justify-content:center;"
+      aria-label="Chat with us"
+      style="position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));right:calc(20px + env(safe-area-inset-right));z-index:9999;display:flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 16px;border-radius:9999px;background:#2F5FAF;color:#fff;border:none;box-shadow:0 10px 25px rgba(0,0,0,.25);cursor:pointer;font-family:inherit;font-size:14px;font-weight:600;white-space:nowrap;"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+      <span>Chat with us</span>
     </button>
   </body>
 </html>

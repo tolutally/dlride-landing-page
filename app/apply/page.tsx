@@ -251,18 +251,19 @@ export default function ApplyPage() {
         </div>
       </footer>
 
-      {/* Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these */}
+      {/* Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these. Widget starts minimized until the toggle button is clicked. */}
       <div
         id="bp-embedded-webchat"
-        className="fixed bottom-24 right-5 z-50 h-[600px] w-[380px] max-w-[calc(100vw-2.5rem)]"
+        className="fixed bottom-[calc(5.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] z-50 h-[600px] w-[380px] max-w-[calc(100vw-2.5rem)]"
         style={{ maxHeight: "calc(100vh - 7rem)" }}
       />
       <button
         id="bp-toggle-chat"
-        aria-label="Open chat"
-        className="fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#2F5FAF] text-white shadow-2xl shadow-black/25 transition hover:bg-[#264E91]"
+        aria-label="Chat with us"
+        className="fixed bottom-[calc(1.25rem+env(safe-area-inset-bottom))] right-[calc(1.25rem+env(safe-area-inset-right))] z-50 flex items-center gap-2 rounded-full bg-[#2F5FAF] px-5 py-3 text-sm font-semibold text-white shadow-2xl shadow-black/25 transition hover:bg-[#264E91]"
       >
-        <MessageCircle className="h-6 w-6" strokeWidth={STROKE_WIDTH} />
+        <MessageCircle className="h-5 w-5" strokeWidth={STROKE_WIDTH} />
+        <span>Chat with us</span>
       </button>
 
       <Script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js" strategy="afterInteractive" />
