@@ -6,10 +6,8 @@
     <title>Ride — Get a reliable ride in minutes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-      /* EngageBay defaults the chat widget to bottom-left; force it bottom-right. */
-      .engagebay-chat-widget { left: auto !important; right: 20px !important; }
-    </style>
+    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js" defer></script>
   </head>
   <body class="font-sans antialiased bg-white">
     <!-- HERO -->
@@ -48,7 +46,7 @@
               <a href="#available-cars" class="transition hover:text-white">Available Cars</a>
               <a href="#how-it-works" class="transition hover:text-white">How It Works</a>
               <a href="#why-dlride" class="transition hover:text-white">Why DLride</a>
-              <a href="#faq" class="transition hover:text-white">FAQ</a>
+              <a href="/faq" class="transition hover:text-white">FAQ</a>
             </nav>
 
             <a
@@ -66,7 +64,7 @@
               <a href="#available-cars" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">Available Cars</a>
               <a href="#how-it-works" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">How It Works</a>
               <a href="#why-dlride" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">Why DLride</a>
-              <a href="#faq" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">FAQ</a>
+              <a href="/faq" class="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5">FAQ</a>
               <a href="/apply" class="mt-2 block rounded-full bg-[#2F5FAF] px-4 py-3 text-center text-sm font-semibold text-white">Get Started</a>
             </nav>
           </div>
@@ -1261,21 +1259,6 @@
         startRentalDifferenceAutoScroll();
       }
 
-    </script>
-    <script type="text/javascript">
-      var EhAPI = EhAPI || {};
-      EhAPI.after_load = function () {
-        EhAPI.set_account('s1n89ior4e65bmpmmk156s3f8g', 'dlride');
-        EhAPI.execute('rules');
-      };
-      (function (d, s, f) {
-        var sc = document.createElement(s);
-        sc.type = 'text/javascript';
-        sc.async = true;
-        sc.src = f;
-        var m = document.getElementsByTagName(s)[0];
-        m.parentNode.insertBefore(sc, m);
-      })(document, 'script', '//d2p078bqz5urf7.cloudfront.net/jsapi/ehform.js?v' + new Date().getHours());
     </script>
   </body>
 </html>

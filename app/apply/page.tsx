@@ -45,11 +45,6 @@ export default function ApplyPage() {
 
   return (
     <>
-      <style>{
-        /* EngageBay defaults the chat widget to bottom-left; force it bottom-right. */
-        `.engagebay-chat-widget { left: auto !important; right: 20px !important; }`
-      }</style>
-
       <header className="fixed left-1/2 top-3 z-50 w-full max-w-5xl -translate-x-1/2 px-3 text-white">
         <div className="relative flex h-14 items-center justify-between rounded-full bg-slate-900/95 px-3 ring-1 ring-white/10 shadow-2xl shadow-black/20 backdrop-blur-xl">
           <Link href="/" className="flex items-center" aria-label="DLride home">
@@ -60,7 +55,7 @@ export default function ApplyPage() {
             <Link href="/#available-cars" className="transition hover:text-white">Available Cars</Link>
             <Link href="/#how-it-works" className="transition hover:text-white">How It Works</Link>
             <Link href="/#why-dlride" className="transition hover:text-white">Why DLride</Link>
-            <Link href="/#faq" className="transition hover:text-white">FAQ</Link>
+            <Link href="/faq" className="transition hover:text-white">FAQ</Link>
           </nav>
 
           <a href="#booking-card" className="hidden h-10 items-center justify-center rounded-full border border-white/15 bg-gradient-to-r from-white/10 to-white/5 px-6 text-sm font-medium text-white/90 shadow-lg backdrop-blur-xl transition hover:from-white/15 hover:to-white/10 md:inline-flex">
@@ -84,7 +79,7 @@ export default function ApplyPage() {
             <Link href="/#available-cars" className="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5" onClick={() => setMobileMenuOpen(false)}>Available Cars</Link>
             <Link href="/#how-it-works" className="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5" onClick={() => setMobileMenuOpen(false)}>How It Works</Link>
             <Link href="/#why-dlride" className="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5" onClick={() => setMobileMenuOpen(false)}>Why DLride</Link>
-            <Link href="/#faq" className="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
+            <Link href="/faq" className="block rounded-xl px-4 py-3 text-sm text-slate-200 hover:bg-white/5" onClick={() => setMobileMenuOpen(false)}>FAQ</Link>
             <a href="#booking-card" className="mt-2 block rounded-full bg-[#2F5FAF] px-4 py-3 text-center text-sm font-semibold text-white" onClick={() => setMobileMenuOpen(false)}>Book Now</a>
           </nav>
         </div>
@@ -255,23 +250,8 @@ export default function ApplyPage() {
         </div>
       </footer>
 
-      <Script id="engagebay-init" strategy="afterInteractive">
-        {`
-          var EhAPI = EhAPI || {};
-          EhAPI.after_load = function () {
-            EhAPI.set_account('s1n89ior4e65bmpmmk156s3f8g', 'dlride');
-            EhAPI.execute('rules');
-          };
-          (function (d, s, f) {
-            var sc = document.createElement(s);
-            sc.type = 'text/javascript';
-            sc.async = true;
-            sc.src = f;
-            var m = document.getElementsByTagName(s)[0];
-            m.parentNode.insertBefore(sc, m);
-          })(document, 'script', '//d2p078bqz5urf7.cloudfront.net/jsapi/ehform.js?v' + new Date().getHours());
-        `}
-      </Script>
+      <Script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js" strategy="afterInteractive" />
+      <Script src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js" strategy="afterInteractive" />
     </>
   );
 }

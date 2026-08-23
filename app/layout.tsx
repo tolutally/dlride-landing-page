@@ -36,7 +36,6 @@ export const metadata: Metadata = {
   creator: "DLride",
   publisher: "DLride",
   category: "Car rental",
-  manifest: "/site.webmanifest",
   icons: {
     icon: [
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
