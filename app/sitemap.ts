@@ -1,8 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
-  ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-  : "http://localhost:3000";
+const baseUrl = "https://dlride.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [

@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = "https://dlride.com";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -13,22 +15,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000",
-  ),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Affordable Weekly Car Rentals in Atlanta | DLride Rentals",
+    default: "Weekly Car Rentals for Gig Drivers in Atlanta | DLride",
     template: "%s | DLride",
   },
   description:
-    "Rent reliable, affordable cars in Atlanta with flexible weekly rentals, unlimited miles, maintenance included, and fast approval. Apply online today.",
+    "Rent a reliable car by the week for rideshare and delivery work in Atlanta. Flexible weekly rentals with unlimited miles and maintenance included. Apply online with DLride.",
   applicationName: "DLride",
   keywords: [
     "weekly car rentals Atlanta",
-    "gig worker car rental",
-    "travel nurse car rental",
+    "gig driver car rental Atlanta",
+    "rideshare driver rental",
+    "delivery driver car rental",
     "unlimited mileage rental",
     "DLride",
   ],
@@ -36,6 +35,10 @@ export const metadata: Metadata = {
   creator: "DLride",
   publisher: "DLride",
   category: "Car rental",
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
@@ -51,9 +54,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "DLride",
-    title: "DLride | Weekly Car Rentals in Atlanta",
+    title: "Weekly Car Rentals for Gig Drivers in Atlanta | DLride",
     description:
-      "A reliable car for work, life, and everything in between. Flexible weekly rentals across Atlanta.",
+      "Reliable weekly car rentals for Atlanta rideshare and delivery drivers, with unlimited miles and maintenance included.",
     images: [
       {
         url: "/meta-card.png",
@@ -65,9 +68,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "DLride | Weekly Car Rentals in Atlanta",
+    title: "Weekly Car Rentals for Gig Drivers in Atlanta | DLride",
     description:
-      "A reliable car for work, life, and everything in between.",
+      "Reliable weekly car rentals for Atlanta rideshare and delivery drivers.",
     images: ["/meta-card.png"],
   },
 };

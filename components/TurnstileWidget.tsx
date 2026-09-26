@@ -54,17 +54,11 @@ export default function TurnstileWidget({
   }, [onTokenChange, onVerificationError]);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && window.turnstile) {
-      setScriptReady(true);
-    }
-  }, []);
-
-  useEffect(() => {
     if (!scriptReady || !siteKey || !containerRef.current || !window.turnstile) return;
 
-    let stallTimer: number | undefined;
+    const stallTimer = { current: undefined as number | undefined };
     const clearStallTimer = () => {
-      if (stallTimer !== undefined) window.clearTimeout(stallTimer);
+      if (stallTimer.current !== undefined) window.clearTimeout(stallTimer.current);
     };
 
     const resetVerification = (message: string, shouldReset = true) => {
@@ -115,7 +109,7 @@ export default function TurnstileWidget({
       resetVerification("Could not initialize security verification. Please reload the page.", false);
     }
 
-    stallTimer = window.setTimeout(() => {
+    stallTimer.current = window.setTimeout(() => {
       resetVerification(
         "Verification is taking longer than expected. Try reloading the page or opening this site in a standard browser tab.",
         false,
