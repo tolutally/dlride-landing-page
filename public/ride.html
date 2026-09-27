@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ride — Get a reliable ride in minutes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://cdn.botpress.cloud/webchat/v5.0/inject.js" defer></script>
     <script src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js" defer></script>
   </head>
   <body class="font-sans antialiased bg-white">
@@ -15,10 +15,12 @@
       <!-- Video underlay -->
       <div class="absolute inset-0">
         <video
+          id="heroVideo"
           autoplay=""
           muted=""
           loop=""
           playsinline=""
+          preload="metadata"
           class="w-full h-full object-cover"
         >
           <source
@@ -36,7 +38,7 @@
       <!-- Content -->
       <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
         <!-- Floating header -->
-        <header class="fixed left-1/2 top-3 z-50 w-full max-w-5xl -translate-x-1/2 px-3 text-white">
+        <header class="fixed inset-x-0 top-3 z-50 mx-auto w-full max-w-5xl px-3 text-white">
           <div class="relative flex h-14 items-center justify-between rounded-full bg-slate-900/95 px-3 ring-1 ring-white/10 shadow-2xl shadow-black/20 backdrop-blur-xl">
             <a href="#" class="flex items-center" aria-label="DLride home">
               <img src="/dlride-logo-white.png" alt="DLride" class="h-10 w-28 object-contain" />
@@ -186,13 +188,13 @@
               <span
                 class="inline-flex shrink-0 items-center justify-center w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-white/15"
               >
-                <i data-lucide="car-front" class="w-5 h-5 text-white"></i>
+                <i data-lucide="umbrella" class="w-5 h-5 text-white"></i>
               </span>
               <h3 class="mt-0 sm:mt-4 text-sm sm:text-base font-semibold text-white leading-tight">
-                Well-Maintained Fleet
+                Insurance Included for a Fee
               </h3>
               <p class="hidden sm:block mt-2 text-sm text-white/75 leading-relaxed">
-                Clean, reliable vehicles ready for rideshare and delivery work.
+                Coverage terms, deductibles, limitations, and exclusions are explained in your rental agreement.
               </p>
             </div>
           </div>
@@ -218,11 +220,11 @@
               class="grid items-center grid-cols-6 gap-x-2 gap-y-3 sm:grid-cols-5 sm:gap-x-4 lg:gap-x-7"
               aria-label="Supported driving platforms"
             >
-              <img src="/uber-eats-logo.png" alt="Uber Eats" class="col-span-2 mx-auto h-12 w-20 rounded-lg object-contain sm:col-span-1 sm:h-14" />
-              <img src="/doordash-logo-clean.png" alt="DoorDash" class="col-span-2 mx-auto h-12 w-20 object-contain sm:col-span-1 sm:h-14" />
-              <img src="/amazon-flex-2.jpeg" alt="Amazon Flex" class="col-span-2 mx-auto h-[6.25rem] w-[10.4rem] object-contain sm:col-span-1 sm:h-[7.3rem]" />
-              <img src="/instacart-logo-clean.png" alt="Instacart" class="col-span-2 col-start-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:col-start-auto sm:h-14 sm:w-28" />
-              <img src="/grubhub-logo-clean.png" alt="Grubhub" class="col-span-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:h-14 sm:w-28" />
+              <img src="/uber-eats-logo.png" alt="Uber Eats" loading="lazy" decoding="async" class="col-span-2 mx-auto h-12 w-20 rounded-lg object-contain sm:col-span-1 sm:h-14" />
+              <img src="/doordash-logo-clean.png" alt="DoorDash" loading="lazy" decoding="async" class="col-span-2 mx-auto h-12 w-20 object-contain sm:col-span-1 sm:h-14" />
+              <img src="/amazon-flex-2.jpeg" alt="Amazon Flex" loading="lazy" decoding="async" class="col-span-2 mx-auto h-[6.25rem] w-[10.4rem] object-contain sm:col-span-1 sm:h-[7.3rem]" />
+              <img src="/instacart-logo-clean.png" alt="Instacart" loading="lazy" decoding="async" class="col-span-2 col-start-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:col-start-auto sm:h-14 sm:w-28" />
+              <img src="/grubhub-logo-clean.png" alt="Grubhub" loading="lazy" decoding="async" class="col-span-2 mx-auto h-12 w-24 object-contain sm:col-span-1 sm:h-14 sm:w-28" />
             </div>
             <p class="mt-3 text-center text-[11px] font-semibold text-[#122A52]/60 sm:text-xs">
               Rideshare • Delivery • Gig work across Atlanta
@@ -259,7 +261,7 @@
         >
           <article class="vehicle-card min-w-[86%] snap-start sm:min-w-0" role="button" tabindex="0" aria-expanded="false" data-car-gallery data-car-name="Chevrolet Malibu" data-economy="Up to 29 city / 36 highway MPG" data-use="Everyday driving &amp; shift commutes" data-images='/car-photos/PHOTO-chevrolet-malibu-2020-2.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-3.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-4.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-5.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-6.jpg|/car-photos/PHOTO-chevrolet-malibu-2020-1jpg.jpg'>
             <div class="vehicle-photo">
-              <img src="/car-photos/PHOTO-chevrolet-malibu-2020-2.jpg" alt="Chevrolet Malibu exterior, photo 1 of 6" />
+              <img src="/car-photos/PHOTO-chevrolet-malibu-2020-2.jpg" alt="Chevrolet Malibu exterior, photo 1 of 6" loading="lazy" decoding="async" />
               <span class="vehicle-available">Available</span>
               <span class="vehicle-view"><i data-lucide="expand"></i> View car</span>
             </div>
@@ -274,7 +276,7 @@
 
           <article class="vehicle-card min-w-[86%] snap-start sm:min-w-0" role="button" tabindex="0" aria-expanded="false" data-car-gallery data-car-name="Hyundai Elantra" data-economy="Up to 33 city / 43 highway MPG" data-use="Gig work &amp; fuel-conscious driving" data-images='/car-photos/hyundai-elantra-1.JPG|/car-photos/hyundai-elantra-2.JPG|/car-photos/hyundai-elantra-3.JPG|/car-photos/hyundai-elantra.4.JPG|/car-photos/hyundai-elantra-5.JPG|/car-photos/hyundai-elantra-6.JPG'>
             <div class="vehicle-photo">
-              <img src="/car-photos/hyundai-elantra-1.JPG" alt="Hyundai Elantra exterior, photo 1 of 6" />
+              <img src="/car-photos/hyundai-elantra-1.JPG" alt="Hyundai Elantra exterior, photo 1 of 6" loading="lazy" decoding="async" />
               <span class="vehicle-available">Available</span>
               <span class="vehicle-view"><i data-lucide="expand"></i> View car</span>
             </div>
@@ -289,7 +291,7 @@
 
           <article class="vehicle-card min-w-[86%] snap-start sm:min-w-0" role="button" tabindex="0" aria-expanded="false" data-car-gallery data-car-name="Nissan Altima" data-economy="Up to 27 city / 39 highway MPG" data-use="Travel nurses &amp; longer weekly drives" data-images='/car-photos/nissan-altima-1.JPG|/car-photos/nissan-altima-2.JPG|/car-photos/nissan-altima-3.JPG|/car-photos/nissan-altima-4.JPG|/car-photos/nissan-altima-5.JPG|/car-photos/nissan-altima-6.JPG'>
             <div class="vehicle-photo">
-              <img src="/car-photos/nissan-altima-1.JPG" alt="Nissan Altima exterior, photo 1 of 6" />
+              <img src="/car-photos/nissan-altima-1.JPG" alt="Nissan Altima exterior, photo 1 of 6" loading="lazy" decoding="async" />
               <span class="vehicle-available">Available</span>
               <span class="vehicle-view"><i data-lucide="expand"></i> View car</span>
             </div>
@@ -349,7 +351,7 @@
             </h2>
           </div>
           <p class="mx-auto mt-5 max-w-2xl text-sm leading-7 text-slate-600 sm:text-base">
-            Unlimited miles, routine maintenance, and dependable support help Atlanta gig drivers spend less time worrying about the car and more time focused on rideshare and delivery work.
+            Unlimited miles, routine maintenance, insurance coverage for a fee, and dependable support help Atlanta gig drivers spend less time worrying about the car and more time focused on rideshare and delivery work.
           </p>
         </div>
 
@@ -398,6 +400,16 @@
                 <p class="mt-2 text-sm leading-6 text-slate-600">If something goes wrong on the road, help is available during daytime service hours.</p>
               </div>
             </article>
+
+            <article class="group flex items-start gap-4 rounded-xl border border-blue-100 bg-white/85 p-4 transition hover:border-blue-200 hover:bg-blue-50/70 md:col-span-2 md:p-5">
+              <div class="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-gradient-to-br from-[#173f88] to-[#3f7ee8] text-white shadow-sm shadow-blue-500/25">
+                <i data-lucide="umbrella" class="h-5 w-5" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="text-base font-semibold tracking-tight md:text-lg">Insurance included for a fee</h3>
+                <p class="mt-2 text-sm leading-6 text-slate-600">Insurance coverage is included with your weekly rental for a fee. Coverage terms, deductibles, limitations, and exclusions are explained in your rental agreement.</p>
+              </div>
+            </article>
             </div>
           </div>
 
@@ -416,8 +428,8 @@
               <div class="mx-auto mt-6 flex max-w-sm items-start gap-3 rounded-xl border border-teal-100 bg-gradient-to-r from-white/85 to-teal-50/80 p-4 text-left shadow-sm shadow-teal-900/5 lg:mx-0">
                 <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-teal-100 text-[#157a78]"><i data-lucide="shield-check" class="h-4 w-4" aria-hidden="true"></i></span>
                 <div>
-                  <p class="text-sm font-bold text-[#122A52]">Mandatory, affordable insurance</p>
-                  <p class="mt-1 text-sm text-slate-500">$50/week</p>
+                  <p class="text-sm font-bold text-[#122A52]">Insurance coverage</p>
+                  <p class="mt-1 text-sm leading-6 text-slate-500">Insurance coverage is included with your weekly rental for a fee. Coverage terms, deductibles, limitations, and exclusions are explained in your rental agreement.</p>
                 </div>
               </div>
 
@@ -425,7 +437,7 @@
                 Get started
                 <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i>
               </a>
-              <p class="mt-4 text-sm text-slate-500">No extra charges, no ridiculous deposit needed.</p>
+              <p class="mt-4 text-sm text-slate-500">Clear weekly pricing is confirmed before pickup.</p>
             </div>
           </div>
         </div>
@@ -528,7 +540,7 @@
           aria-label="DLride rental benefits"
         >
           <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0">
-            <img src="/calendar-art-sky.png" alt="Calendar representing flexible weekly rentals" class="aspect-[16/9] w-full object-cover" />
+            <img src="/calendar-art-sky.png" alt="Calendar representing flexible weekly rentals" loading="lazy" decoding="async" class="aspect-[16/9] w-full object-cover" />
             <div class="p-6">
               <h3 class="text-xl font-semibold tracking-tight">Weekly, not long-term</h3>
               <p class="mt-3 text-sm leading-6 text-slate-400">Keep a car for the time you actually need it without signing up for months or years.</p>
@@ -536,7 +548,7 @@
           </article>
 
           <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0">
-            <img src="/real-life-art-sky.png" alt="Car connecting work, errands, appointments, and travel" class="aspect-[16/9] w-full object-cover" />
+            <img src="/real-life-art-sky.png" alt="Car connecting work, errands, appointments, and travel" loading="lazy" decoding="async" class="aspect-[16/9] w-full object-cover" />
             <div class="p-6">
               <h3 class="text-xl font-semibold tracking-tight">Use it for real life</h3>
               <p class="mt-3 text-sm leading-6 text-slate-400">Gig shifts, hospital commutes, errands, appointments, weekend drives — one car can fit the whole week.</p>
@@ -544,7 +556,7 @@
           </article>
 
           <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0">
-            <img src="/less-check-art-sky.png" alt="Car key and approved identification representing a simpler rental process" class="aspect-[16/9] w-full object-cover" />
+            <img src="/less-check-art-sky.png" alt="Car key and approved identification representing a simpler rental process" loading="lazy" decoding="async" class="aspect-[16/9] w-full object-cover" />
             <div class="p-6">
               <h3 class="text-xl font-semibold tracking-tight">Less standing in your way</h3>
               <p class="mt-3 text-sm leading-6 text-slate-400">No credit check, straightforward requirements, and a simpler path to getting on the road.</p>
@@ -552,7 +564,7 @@
           </article>
 
           <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:min-w-0 lg:col-span-1">
-            <img src="/maintenance-art-sky.png" alt="Maintenance and roadside assistance coverage" class="aspect-[16/9] w-full object-cover" />
+            <img src="/maintenance-art-sky.png" alt="Maintenance and roadside assistance coverage" loading="lazy" decoding="async" class="aspect-[16/9] w-full object-cover" />
             <div class="p-6">
               <h3 class="text-xl font-semibold tracking-tight">The expensive stuff is covered</h3>
               <p class="mt-3 text-sm leading-6 text-slate-400">Routine maintenance and daytime roadside assistance are included, so keeping the car running isn’t another problem to solve.</p>
@@ -561,7 +573,7 @@
 
           <article class="group relative min-w-[86%] snap-start overflow-hidden rounded-3xl border border-white/10 bg-white/5 transition hover:border-blue-400/40 sm:col-span-2 sm:min-w-0 lg:col-span-2">
             <div class="grid h-full sm:grid-cols-[0.85fr_1.15fr]">
-              <img src="/mile-art-sky.png" alt="Unlimited mileage represented by an open road and speedometer" class="h-56 w-full object-cover sm:h-full sm:min-h-48" />
+              <img src="/mile-art-sky.png" alt="Unlimited mileage represented by an open road and speedometer" loading="lazy" decoding="async" class="h-56 w-full object-cover sm:h-full sm:min-h-48" />
               <div class="flex flex-col justify-center p-6 sm:p-8">
                 <h3 class="text-xl font-semibold tracking-tight">Drive without counting every mile</h3>
                 <p class="mt-3 text-sm leading-6 text-slate-400">Unlimited mileage gives you room to work, commute, travel, and handle whatever the week brings.</p>
@@ -584,7 +596,7 @@
               Built for the way gig drivers work
             </h2>
             <p class="mx-auto mt-5 max-w-xl text-sm leading-7 text-slate-600 sm:text-base">
-              DLride helps Atlanta drivers earn across rideshare and delivery platforms with a reliable weekly car, while keeping flexible transportation available for other real-life needs.
+              DLride helps Atlanta <a href="/gig-driver-car-rental-atlanta" class="font-semibold text-[#2F5FAF] underline decoration-blue-200 underline-offset-4 hover:decoration-blue-500">gig drivers</a> earn across <a href="/rideshare-car-rental-atlanta" class="font-semibold text-[#2F5FAF] underline decoration-blue-200 underline-offset-4 hover:decoration-blue-500">rideshare</a> and delivery platforms with a reliable weekly car, while keeping flexible transportation available for other real-life needs.
             </p>
         </div>
 
@@ -596,29 +608,29 @@
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Gig workers</p>
             <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-teal-100 px-1">When your car stops, your income can stop too.</span></h3>
-            <p class="mt-5 text-sm leading-7 text-slate-600">Get a reliable weekly rental for Uber, Lyft, DoorDash, Instacart and other gig work — with unlimited miles and maintenance covered.</p>
-            <div class="mt-auto pt-6"><img src="/gig-worker.webp" alt="Gig worker driving with a phone mounted in the car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+            <p class="mt-5 text-sm leading-7 text-slate-600">Get a reliable weekly rental for <a href="/uber-car-rental-atlanta" class="font-semibold text-[#2F5FAF] hover:underline">Uber</a>, <a href="/lyft-car-rental-atlanta" class="font-semibold text-[#2F5FAF] hover:underline">Lyft</a>, <a href="/doordash-car-rental-atlanta" class="font-semibold text-[#2F5FAF] hover:underline">DoorDash</a>, Instacart and other gig work — with unlimited miles and maintenance covered.</p>
+            <div class="mt-auto pt-6"><img src="/gig-worker.webp" alt="Gig worker driving with a phone mounted in the car" loading="lazy" decoding="async" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
 
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
-            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Travel nurses</p>
+            <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]"><a href="/travel-nurse-car-rental-atlanta" class="hover:underline">Travel nurses</a></p>
             <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-sky-100 px-1">A new assignment shouldn’t mean scrambling for transportation.</span></h3>
             <p class="mt-5 text-sm leading-7 text-slate-600">Get a dependable car for hospital commutes, rotating shifts and temporary placements without taking on a long-term lease.</p>
-            <div class="mt-auto pt-6"><img src="/travel-nurse.jpg" alt="Travel nurse loading her bag into a car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+            <div class="mt-auto pt-6"><img src="/travel-nurse.jpg" alt="Travel nurse loading her bag into a car" loading="lazy" decoding="async" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
 
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Everyday drivers</p>
             <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-amber-100 px-1">Life doesn’t wait because your car is unavailable.</span></h3>
             <p class="mt-5 text-sm leading-7 text-slate-600">Use DLride for work, school runs, appointments, errands and everything else you still need to get done.</p>
-            <div class="mt-auto pt-6"><img src="/everyday-driver.webp" alt="Everyday driver getting comfortable in a car" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+            <div class="mt-auto pt-6"><img src="/everyday-driver.webp" alt="Everyday driver getting comfortable in a car" loading="lazy" decoding="async" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
 
           <article class="flex min-w-[86%] snap-start flex-col rounded-2xl bg-slate-100 p-5 sm:min-w-0 sm:p-6">
             <p class="text-xs font-bold uppercase tracking-[0.16em] text-[#2F5FAF]">Essential weekly transportation</p>
             <h3 class="mt-6 text-xl font-semibold leading-snug text-slate-900"><span class="box-decoration-clone bg-indigo-100 px-1">A dependable car when your week can’t wait.</span></h3>
             <p class="mt-5 text-sm leading-7 text-slate-600">Get to shifts, appointments, errands and everyday responsibilities with a flexible weekly rental — without committing to a car you don’t need year-round.</p>
-            <div class="mt-auto pt-6"><img src="/essential-weekly-transportation.avif" alt="Driver using a car for essential weekly transportation" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
+            <div class="mt-auto pt-6"><img src="/essential-weekly-transportation.avif" alt="Driver using a car for essential weekly transportation" loading="lazy" decoding="async" class="h-56 w-full rounded-xl object-cover sm:h-64" /></div>
           </article>
         </div>
       </div>
@@ -672,7 +684,7 @@
             <div class="testimonial-scroll-container flex flex-col gap-4">
             <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
               <div class="flex items-center gap-3">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus T." class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marcus T." loading="lazy" decoding="async" class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
                 <div>
                   <h3 class="text-lg font-semibold tracking-tight text-white">Marcus T.</h3>
                   <p class="mt-0.5 text-xs text-blue-200">Uber &amp; DoorDash Driver · Atlanta</p>
@@ -689,7 +701,7 @@
 
             <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
               <div class="flex items-center gap-3">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Danielle R." class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Danielle R." loading="lazy" decoding="async" class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
                 <div>
                   <h3 class="text-lg font-semibold tracking-tight text-white">Danielle R.</h3>
                   <p class="mt-0.5 text-xs text-blue-200">Travel Nurse · Atlanta</p>
@@ -706,7 +718,7 @@
 
             <article class="shrink-0 rounded-3xl border border-white/10 bg-white/5 p-5 sm:p-6">
               <div class="flex items-center gap-3">
-                <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Chris M." class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
+                <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Chris M." loading="lazy" decoding="async" class="h-11 w-11 rounded-full object-cover ring-2 ring-white/20" />
                 <div>
                   <h3 class="text-lg font-semibold tracking-tight text-white">Chris M.</h3>
                   <p class="mt-0.5 text-xs text-blue-200">Atlanta Resident</p>
@@ -768,6 +780,20 @@
           Weekly rentals in Atlanta for gig work, travel assignments, everyday driving, and essential weekly transportation.
         </p>
         <div class="mx-auto mt-10 max-w-3xl divide-y divide-slate-200 border-t border-slate-200">
+          <div>
+            <button
+              type="button"
+              onclick="this.nextElementSibling.classList.toggle('hidden');(this.querySelector('svg')||this.querySelector('i')).classList.toggle('rotate-180')"
+              class="flex w-full items-center justify-between gap-5 py-5 text-left"
+              aria-label="Toggle answer for Is insurance included?"
+            >
+              <span class="text-base font-semibold text-slate-900">Is insurance included?</span>
+              <i data-lucide="chevron-down" class="h-5 w-5 shrink-0 text-slate-900 transition-transform"></i>
+            </button>
+            <div class="hidden pb-5 pr-8 text-sm leading-relaxed text-slate-500">
+              Insurance coverage is included with your weekly rental for a fee. Coverage terms, deductibles, limitations, and exclusions are explained in your rental agreement.
+            </div>
+          </div>
           <div>
             <button
               type="button"
@@ -921,6 +947,8 @@
           class="object-cover w-full h-full md:object-left md:scale-150 md:origin-top-left"
           src="https://images.pexels.com/photos/1386649/pexels-photo-1386649.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600"
           alt="Woman in a car"
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div
@@ -952,7 +980,7 @@
     </section>
     <footer class="w-full border-t border-white/10 bg-gradient-to-br from-[#0b1422] via-[#122A52] to-[#10343a]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid gap-10 md:grid-cols-[2fr_1fr] md:gap-12">
+        <div class="grid gap-10 md:grid-cols-[2fr_1fr_1fr] md:gap-12">
           <div>
             <a
               href="#"
@@ -966,8 +994,20 @@
             <div class="mt-5 flex flex-wrap gap-2 text-xs text-blue-100">
               <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">No credit check</span>
               <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Unlimited miles</span>
+              <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Insurance included for a fee</span>
               <span class="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Daytime roadside assistance</span>
             </div>
+          </div>
+          <div>
+            <h4 class="text-sm font-semibold text-white">Weekly Rentals For</h4>
+            <ul class="mt-4 space-y-3 text-sm text-blue-200">
+              <li><a href="/gig-driver-car-rental-atlanta" class="transition hover:text-white">Gig drivers</a></li>
+              <li><a href="/uber-car-rental-atlanta" class="transition hover:text-white">Uber drivers</a></li>
+              <li><a href="/lyft-car-rental-atlanta" class="transition hover:text-white">Lyft drivers</a></li>
+              <li><a href="/doordash-car-rental-atlanta" class="transition hover:text-white">DoorDash drivers</a></li>
+              <li><a href="/rideshare-car-rental-atlanta" class="transition hover:text-white">Rideshare drivers</a></li>
+              <li><a href="/travel-nurse-car-rental-atlanta" class="transition hover:text-white">Travel nurses</a></li>
+            </ul>
           </div>
           <div>
             <h4 class="text-sm font-semibold text-white">Connect</h4>

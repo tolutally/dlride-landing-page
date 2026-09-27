@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Suspense } from "react";
+import MetaPixel from "@/components/MetaPixel";
 import "./globals.css";
 
 const siteUrl = "https://dlride.com";
@@ -21,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | DLride",
   },
   description:
-    "Rent a reliable car by the week for rideshare and delivery work in Atlanta. Flexible weekly rentals with unlimited miles and maintenance included. Apply online with DLride.",
+    "Rent a reliable car by the week for rideshare and delivery work in Atlanta. Unlimited miles and maintenance are included, with insurance coverage included for a fee.",
   applicationName: "DLride",
   keywords: [
     "weekly car rentals Atlanta",
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "DLride",
     title: "Weekly Car Rentals for Gig Drivers in Atlanta | DLride",
     description:
-      "Reliable weekly car rentals for Atlanta rideshare and delivery drivers, with unlimited miles and maintenance included.",
+      "Reliable weekly car rentals for Atlanta rideshare and delivery drivers, with unlimited miles, maintenance, and insurance coverage included for a fee.",
     images: [
       {
         url: "/meta-card.png",
@@ -89,6 +91,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
       </body>
     </html>
   );

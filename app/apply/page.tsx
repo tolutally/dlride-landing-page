@@ -212,7 +212,7 @@ export default function ApplyPage() {
 
       <footer className="w-full border-t border-white/10 bg-[#122A52]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-10 md:grid-cols-[2fr_1fr] md:gap-12">
+          <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr] md:gap-12">
             <div>
               <Link href="/" className="inline-flex rounded-md focus:outline-none focus:ring-2 focus:ring-[#7CA3E6]">
                 <img src="/dlride-logo-white.png" alt="DLride" className="h-12 w-36 object-contain object-left" />
@@ -221,8 +221,20 @@ export default function ApplyPage() {
               <div className="mt-5 flex flex-wrap gap-2 text-xs text-blue-100">
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">No credit check</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Unlimited miles</span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Insurance included for a fee</span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">Daytime roadside assistance</span>
               </div>
+            </div>
+            <div>
+              <h2 className="text-sm font-semibold text-white">Weekly Rentals For</h2>
+              <ul className="mt-4 space-y-3 text-sm text-blue-200">
+                <li><Link href="/gig-driver-car-rental-atlanta" className="transition hover:text-white">Gig drivers</Link></li>
+                <li><Link href="/uber-car-rental-atlanta" className="transition hover:text-white">Uber drivers</Link></li>
+                <li><Link href="/lyft-car-rental-atlanta" className="transition hover:text-white">Lyft drivers</Link></li>
+                <li><Link href="/doordash-car-rental-atlanta" className="transition hover:text-white">DoorDash drivers</Link></li>
+                <li><Link href="/rideshare-car-rental-atlanta" className="transition hover:text-white">Rideshare drivers</Link></li>
+                <li><Link href="/travel-nurse-car-rental-atlanta" className="transition hover:text-white">Travel nurses</Link></li>
+              </ul>
             </div>
             <div>
               <h2 className="text-sm font-semibold text-white">Connect</h2>

@@ -6,7 +6,7 @@ import { ArrowRight, ChevronDown, MessageCircle } from "lucide-react";
 export const metadata: Metadata = {
   title: "Frequently Asked Questions",
   description:
-    "Answers about DLride weekly car rentals, eligibility, mileage, maintenance, roadside assistance, and service in Atlanta.",
+    "Answers about DLride weekly car rentals, eligibility, mileage, maintenance, insurance coverage, roadside assistance, and service in Atlanta.",
 };
 
 const faqs = [
@@ -44,6 +44,11 @@ const faqs = [
     question: "Is maintenance included?",
     answer:
       "Routine maintenance is covered during your rental, so you don’t have to take on the usual upkeep that comes with owning a car.",
+  },
+  {
+    question: "Is insurance included?",
+    answer:
+      "Insurance coverage is included with your weekly rental for a fee. Coverage terms, deductibles, limitations, and exclusions are explained in your rental agreement.",
   },
   {
     question: "What happens if I have a problem on the road?",
@@ -113,6 +118,39 @@ export default function FaqPage() {
           </div>
         </section>
       </main>
+
+      <footer className="w-full border-t border-white/10 bg-[#122A52]">
+        <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-[2fr_1fr_1fr] md:gap-12">
+            <div>
+              <Link href="/" className="inline-flex rounded-md focus:outline-none focus:ring-2 focus:ring-[#7CA3E6]">
+                <img src="/dlride-logo-white.png" alt="DLride" className="h-12 w-36 object-contain object-left" />
+              </Link>
+              <p className="mt-4 max-w-md text-sm leading-6 text-blue-200">Reliable weekly car rentals in Atlanta for gig work, rideshare, delivery, and travel assignments.</p>
+            </div>
+            <div>
+              <h2 className="text-sm font-semibold text-white">Weekly Rentals For</h2>
+              <ul className="mt-4 space-y-3 text-sm text-blue-200">
+                <li><Link href="/gig-driver-car-rental-atlanta" className="transition hover:text-white">Gig drivers</Link></li>
+                <li><Link href="/uber-car-rental-atlanta" className="transition hover:text-white">Uber drivers</Link></li>
+                <li><Link href="/lyft-car-rental-atlanta" className="transition hover:text-white">Lyft drivers</Link></li>
+                <li><Link href="/doordash-car-rental-atlanta" className="transition hover:text-white">DoorDash drivers</Link></li>
+                <li><Link href="/rideshare-car-rental-atlanta" className="transition hover:text-white">Rideshare drivers</Link></li>
+                <li><Link href="/travel-nurse-car-rental-atlanta" className="transition hover:text-white">Travel nurses</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-sm font-semibold text-white">Connect</h2>
+              <ul className="mt-4 space-y-3 text-sm text-blue-200">
+                <li><Link href="/apply" className="transition hover:text-white">Apply for a Car</Link></li>
+                <li><a href="mailto:hello@dlride.com" className="transition hover:text-white">hello@dlride.com</a></li>
+                <li><a href="https://www.instagram.com/dlride/" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+          <p className="mt-10 border-t border-white/10 pt-6 text-xs text-blue-300">© {new Date().getFullYear()} DLride. All rights reserved. Atlanta, Georgia.</p>
+        </div>
+      </footer>
 
       {/* Botpress config sets a custom toggleChatId/embeddedChatId, so neither bubble nor panel renders without these. Widget starts minimized until the toggle button is clicked. */}
       <div

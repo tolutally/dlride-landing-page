@@ -28,15 +28,14 @@ export default function Home() {
 
   return (
     <>
-      <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
-      <Script src="https://unpkg.com/lucide@latest" strategy="beforeInteractive" />
+      <Script src="https://unpkg.com/lucide@latest" strategy="afterInteractive" />
       <Script
         src="https://cdn.botpress.cloud/webchat/v5.0/inject.js"
-        strategy="beforeInteractive"
+        strategy="lazyOnload"
       />
       <Script
         src="https://files.bpcontent.cloud/2026/08/23/07/20260823072218-ZV0U13CL.js"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
       <div dangerouslySetInnerHTML={{ __html: homepageMarkup }} />
     </>
